@@ -1,5 +1,0 @@
-var searchData=
-[
-  ['json_0',['Json',['../class_json.html',1,'Json'],['../class_json.html#a8e4495481320c71ce2a4122a7a2b165b',1,'Json::Json()'],['../class_json.html#aea522612921c1b09b901d631ad9b8af1',1,'Json::Json(bool value)'],['../class_json.html#ab34708bf4d7f32eebe62fd494f3037bd',1,'Json::Json(std::string &amp;key, std::string &amp;value)'],['../class_json.html#a33bbfdeebc5fa42ae68deb74930c87a7',1,'Json::Json(const char *key, const char *value)'],['../class_json.html#a1c37e2023d9835d1a1051df0f3bc9ffa',1,'Json::Json(std::string &amp;value)'],['../class_json.html#a0fcb84cf9d016ce27fa37cd5ae206018',1,'Json::Json(const char *value)'],['../class_json.html#ab00abe63f58e5345d309af9b7d1dfe96',1,'Json::Json(const double value)'],['../class_json.html#a77ebaef3b9afe115b62f0e7661701d17',1,'Json::Json(const int value)'],['../class_json.html#a053cefecf5ea7b069bde03b9a6c0f4df',1,'Json::Json(const Json &amp;other)']]],
-  ['jsonoperations_1',['JsonOperations',['../class_json_operations.html',1,'JsonOperations'],['../class_json_operations.html#af158e4a3587fb4db899bbf978cd5f25e',1,'JsonOperations::JsonOperations()']]]
-];
