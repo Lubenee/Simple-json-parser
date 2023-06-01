@@ -22,6 +22,35 @@ Json *JsonFactory::parse_value(const char *value) const
     return crt->create_json(val);
 }
 
+Json *JsonFactory::parse_value(std::ifstream &ifs) const
+{
+    if (!ifs.is_open())
+        return nullptr;
+
+    ifs.seekg(0, std::ios::end);
+    size_t file_size = ifs.tellg();
+    char *buffer = new char[file_size];
+
+    ifs.seekg(0, std::ios::beg);
+    ifs.read(&buffer[0], file_size);
+
+    String file(buffer);
+    delete[] buffer;
+
+    ifs.close();
+    return parse_value(file.c_str());
+}
+
+Json *JsonFactory::parse_file(const char *_filename) const
+{
+    std::ifstream ifs;
+    ifs.open(_filename, std::ios::in);
+    if (!ifs.is_open())
+        return nullptr;
+
+    return parse_value(ifs);
+}
+
 const JsonCreator *JsonFactory::get_creator(const String &_val) const
 {
     for (size_t i = 0; i < count; ++i)

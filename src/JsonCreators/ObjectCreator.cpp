@@ -57,7 +57,7 @@ String ObjectCreator::parse_obj_key(const String &value, size_t &index) const
 Json *ObjectCreator::parse_object(const String &value) const
 {
     size_t index = 0;
-    Vector<Item> temp;
+    Vector<Pair> temp;
     while (index < value.length())
     {
         String new_key(parse_obj_key(value, index));

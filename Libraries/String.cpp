@@ -46,6 +46,34 @@ size_t String::length() const
 	return this->m_size;
 }
 
+void String::split(const char split_character, Vector<String> &returned) const
+{
+	char *current = new char[128](); // '()' sets all elements to 0;
+	size_t current_size = 0;
+	for (size_t i = 0; i < m_size; ++i)
+	{
+		if (this->str[i] == split_character)
+		{
+			String temp(current);
+			returned.push_back(temp);
+			current_size = 0;
+			delete[] current;
+			current = new char[128]();
+		}
+		else
+		{
+			current[current_size++] = str[i];
+		}
+		if (i == m_size - 1)
+		{
+			String temp(current);
+			returned.push_back(temp);
+			current_size = 0;
+		}
+	}
+	delete[] current;
+}
+
 const bool String::includes(const String &search_value) const
 {
 	if (this->str == nullptr)

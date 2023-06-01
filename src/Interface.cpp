@@ -1,13 +1,13 @@
 #include "Interface.hpp"
 
 Interface::Interface()
-    : is_running(true), current(nullptr), filename(INVALID_FILENAME), file(""), loaded_file(false) {}
+    : is_running(true), current(nullptr), filename(INVALID_FILENAME), loaded_file(false) {}
 
 Interface::Interface(const String &_filename)
-    : is_running(true), current(nullptr), filename(_filename), file(""), loaded_file(false)
+    : is_running(true), current(nullptr), filename(_filename), loaded_file(false)
 {
     if (filename != INVALID_FILENAME)
-        if (load_json_from_file(filename))
+        if (open_file(filename))
             loaded_file = true;
 }
 
@@ -22,59 +22,49 @@ void Interface::run()
         update_interface();
 }
 
-bool Interface::load_json_from_file(const String &_filename)
-{
-    std::ifstream ifs;
-    ifs.open(_filename.c_str(), std::ios::in);
-    if (!ifs.is_open())
-        return false;
-
-    ifs.seekg(0, std::ios::end);
-    size_t file_size = ifs.tellg();
-    char *buffer = new char[file_size];
-
-    ifs.seekg(0, std::ios::beg);
-    ifs.read(&buffer[0], file_size);
-
-    file = buffer;
-    delete[] buffer;
-
-    ifs.close();
-    return true;
-}
-
 void Interface::update_interface()
 {
     String command = "";
     log_main_menu();
-    std::cin >> command; // TODO
+    std::cout << "   >>";
+    std::cin >> command;
+    Vector<String> tokens;
+    command.split(' ', tokens);
+    command = tokens[0].to_lower_case();
 
-    if (command == "1")
+    if (command == "parse")
     {
-        if (current != nullptr)
-            delete current;
-
-        load_json_from_file(filename);
-        current = JsonFactory::get().parse_value(file.c_str());
-
+        open_file(filename);
         current->log();
-        std::cout << std::endl;
+    }
+    else if (command == "open")
+    {
+        if (tokens.size() > 1)
+            if (open_file(tokens[1]))
+                std::cout << "Done!";
     }
     else if (command == "search")
     {
-        String temp;
-        std::cin >> temp;
-        current->search(temp);
+        if (tokens.size() > 1)
+            if (!current->search(tokens[1]))
+                std::cout << "No search results!";
     }
-    else if (command == "contains")
+    else if (command == "exit")
     {
-        String temp;
-        std::cin >> temp;
-        current->contains(temp);
-        }
-    else if (command == "0")
         is_running = false;
+        std::cout << "Exiting.";
+    }
     std::cout << std::endl;
+}
+
+bool Interface::open_file(const String &_filename)
+{
+    if (current)
+        delete current;
+    current = JsonFactory::get().parse_file(_filename.c_str());
+    filename = _filename;
+    loaded_file = (bool)current;
+    return (current ? true : false);
 }
 
 void Interface::log_main_menu() const
@@ -90,15 +80,14 @@ void Interface::log_main_menu() const
         temp = "No file is currently loaded.";
 
     std::cout << "--------------------------------------------------------------------------\n"
-              << temp << '\n';
+              << temp << '\n'
+              << "'Exit' To quit the program.\n"
+              << "'Open' -> 'Filepath' to try a new file.\n";
     if (loaded_file)
-        std::cout << "0. To quit the program.\n"
-                  << "1. To parse and display loaded file.\n"
-                  << "---------------------------------------------------------------------\n"
+        std::cout << "'Parse' To parse and display loaded file.\n"
+                  << "'Search' -> 'Key' To display all values corresponding to that key.\n"
                   << std::flush;
+    std::cout << "--------------------------------------------------------------------------\n";
 }
 
-Interface::~Interface()
-{
-    delete current;
-}
+Interface::~Interface() { delete current; }

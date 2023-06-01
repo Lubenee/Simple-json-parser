@@ -2,7 +2,7 @@
 
 JsonObject::JsonObject() {}
 
-JsonObject::JsonObject(const Vector<Item> &_val)
+JsonObject::JsonObject(const Vector<Pair> &_val)
 {
     for (size_t i = 0; i < _val.size(); ++i)
         val.push_back(_val[i]);
@@ -20,7 +20,7 @@ JsonObject &JsonObject::operator=(const JsonObject &rhs)
 
 const bool JsonObject::search(const String &key) const
 {
-    Vector<Item> matches;
+    Vector<Pair> matches;
     for (size_t i = 0; i < val.size(); ++i)
     {
         if (val[i].key.includes(key))
@@ -61,7 +61,7 @@ bool JsonObject::contains(const String &_value) const
                 std::cout << std::endl;
             found = true;
         }
-    }   
+    }
     return found;
 }
 
@@ -71,6 +71,8 @@ void JsonObject::log() const
 {
     std::cout << "{\n";
     format_spaces += 2;
+
+    JsonType prev_elem = JsonType::Null;
     for (size_t i = 0; i < val.size(); ++i)
     {
         for (size_t i = 0; i < format_spaces; ++i)
@@ -80,8 +82,10 @@ void JsonObject::log() const
         val[i].value->log();
         if (i != val.size() - 1)
             std::cout << ",\n";
+        prev_elem = val[i].value->get_type();
     }
     format_spaces -= 2;
+
     std::cout << '\n';
     for (size_t i = 0; i < format_spaces; ++i)
         std::cout << ' ';
@@ -92,26 +96,26 @@ JsonObject::~JsonObject() {}
 
 /*==========================================================================*/
 /*==========================================================================*/
-/*=============================Item Definitions=============================*/
+/*=============================Pair Definitions=============================*/
 /*==========================================================================*/
 /*==========================================================================*/
 
-Item::Item() : value(nullptr), key("") {}
+Pair::Pair() : value(nullptr), key("") {}
 
-Item::Item(const Json *_value) : key("")
+Pair::Pair(const Json *_value) : key("")
 {
     value = _value->clone();
 }
 
-Item::Item(const Json *_value, const String &_key)
+Pair::Pair(const Json *_value, const String &_key)
 {
     value = _value->clone();
     key = _key;
 }
 
-Item::Item(const Item &rhs) : value(rhs.value->clone()), key(rhs.key) {}
+Pair::Pair(const Pair &rhs) : value(rhs.value->clone()), key(rhs.key) {}
 
-Item &Item::operator=(const Item &rhs)
+Pair &Pair::operator=(const Pair &rhs)
 {
     if (this == &rhs)
         return *this;
@@ -123,9 +127,9 @@ Item &Item::operator=(const Item &rhs)
     return *this;
 }
 
-bool Item::operator==(const Item &rhs)
+bool Pair::operator==(const Pair &rhs)
 {
     return false; // TODO?
 }
 
-Item::~Item() { delete value; }
+Pair::~Pair() { delete value; }

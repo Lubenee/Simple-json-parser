@@ -22,7 +22,7 @@ bool FloatCreator::is_float(const String &val) const
 
 float FloatCreator::stof(const String &val) const
 {
-    return ::atof(val.c_str());
+    return (::atof(val.c_str()));
 }
 
 static FloatCreator __;

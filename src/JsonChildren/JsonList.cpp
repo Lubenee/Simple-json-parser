@@ -40,7 +40,8 @@ void JsonList::log() const
 
         val[i]->log();
 
-        if (i != val.size() - 1)
+        bool last_elem = (i != val.size() - 1);
+        if (last_elem)
             std::cout << ", ";
         if (nested_objects)
             std::cout << std::endl;
@@ -52,9 +53,6 @@ void JsonList::log() const
             std::cout << ' ';
 
     std::cout << ']';
-
-    if (nested_objects)
-        std::cout << std::endl;
 }
 
 const bool JsonList::search(const String &key) const

@@ -3,25 +3,25 @@
 
 #include "Json.hpp"
 
-struct Item
+struct Pair
 {
     Json *value;
     String key;
 
-    Item();
-    Item(const Json *_value);
-    Item(const Json *_value, const String &_key);
-    Item(const Item &_rhs);
-    Item &operator=(const Item &rhs);
-    bool operator==(const Item &rhs);
+    Pair();
+    Pair(const Json *_value);
+    Pair(const Json *_value, const String &_key);
+    Pair(const Pair &_rhs);
+    Pair &operator=(const Pair &rhs);
+    bool operator==(const Pair &rhs);
 
-    ~Item();
+    ~Pair();
 };
 class JsonObject : public Json
 {
 public:
     JsonObject();
-    JsonObject(const Vector<Item> &_val);
+    JsonObject(const Vector<Pair> &_val);
     JsonObject(const JsonObject &rhs);
     JsonObject &operator=(const JsonObject &rhs);
 
@@ -36,7 +36,7 @@ public:
     ~JsonObject();
 
 private:
-    Vector<Item> val;
+    Vector<Pair> val;
 };
 
 #endif // JSON_OBJECT_H

@@ -3,6 +3,7 @@
 
 #include <cstring>
 #include <iostream>
+#include "Vector.hpp"
 
 class String
 {
@@ -46,6 +47,8 @@ public:
 
 	/* Erases the letter at the passed index, if the index is valid. */
 	void erase(const int index);
+
+	void split(const char split_character, Vector<String> &returned) const;
 
 	/* Returns the index of the last time the passed character is seen in the string. */
 	size_t last_index_of(const char &value) const;
