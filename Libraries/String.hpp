@@ -72,6 +72,7 @@ public:
 
 	/* Returns a reference to the character at a specific index in the string.*/
 	char &operator[](const size_t index) const;
+
 	friend std::ostream &operator<<(std::ostream &os, const String &string);
 	friend std::istream &operator>>(std::istream &input, String &str);
 

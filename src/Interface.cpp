@@ -29,8 +29,16 @@ void Interface::update_interface()
     std::cout << "   >>";
     std::cin >> command;
     Vector<String> tokens;
-    command.split(' ', tokens);
-    command = tokens[0].to_lower_case();
+
+    try
+    {
+        command.split(' ', tokens);
+        command = tokens[0].to_lower_case();
+    }
+    catch (const std::invalid_argument &e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 
     if (command == "parse")
     {

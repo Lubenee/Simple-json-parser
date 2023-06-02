@@ -83,6 +83,6 @@ Json *JsonList::clone() const
 
 JsonList::~JsonList()
 {
-    for (size_t i = 0; i < val.size(); ++i)
-        delete val[i];
+    for (auto &i : val)
+        delete i;
 }

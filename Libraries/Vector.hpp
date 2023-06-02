@@ -10,17 +10,14 @@ public:
 	class Iterator
 	{
 	public:
-		using pointer = Type *;
-		using reference = Type &;
-
 		Iterator() : ptr(nullptr), index(0) {}
 		Iterator(Vector<Type> *_vec) : ptr(_vec), index(0) {}
 		Iterator(Vector<Type> *_vec, int _index) : ptr(_vec), index(_index) {}
 
-		reference operator*() { return (*ptr)[index]; }
-		pointer operator->() { return &((*ptr)[index]); }
-		const pointer operator->() const { return &((*ptr)[index]); }
-		reference operator[](const int _index) { return (*ptr)[index + _index]; }
+		Type &operator*() { return (*ptr)[index]; }
+		Type *operator->() { return &((*ptr)[index]); }
+		const Type *operator->() const { return &((*ptr)[index]); }
+		Type &operator[](const int _index) { return (*ptr)[index + _index]; }
 
 		Iterator &operator++()
 		{
@@ -55,8 +52,11 @@ public:
 	void push_back(const Type &new_data);
 	void pop_back();
 
-	Iterator begin() const;
-	Iterator end() const;
+	Iterator begin();
+	Iterator end();
+
+	const Iterator cbegin() const;
+	const Iterator cend() const;
 
 	/* Returns the vector's size. */
 	size_t size() const;
@@ -88,10 +88,10 @@ public:
 	void erase(const Type &elem);
 
 	/*Returns a reference to the element at *index*. The method does not handle errors if the index is out of range.*/
-	Type &operator[](const size_t index) const;
+	Type &operator[](const size_t index);
 
-	/* Compares two vectors. In order for this method to return true, both vectors need to have the same element type, size and element content. */
-	bool operator==(const Vector<Type> &other) const;
+	const Type &operator[](const size_t index) const;
+
 	Vector<Type> &operator=(const Vector<Type> &other);
 
 	~Vector();
@@ -152,13 +152,25 @@ template <typename Type>
 inline void Vector<Type>::pop_back() { current--; }
 
 template <typename Type>
-typename Vector<Type>::Iterator Vector<Type>::begin() const
+typename Vector<Type>::Iterator Vector<Type>::begin()
 {
 	return Vector<Type>::Iterator(this, 0);
 }
 
 template <typename Type>
-typename Vector<Type>::Iterator Vector<Type>::end() const
+const typename Vector<Type>::Iterator Vector<Type>::cbegin() const
+{
+	return Vector<Type>::Iterator(this, 0);
+}
+
+template <typename Type>
+typename Vector<Type>::Iterator Vector<Type>::end()
+{
+	return Vector<Type>::Iterator(this, current);
+}
+
+template <typename Type>
+const typename Vector<Type>::Iterator Vector<Type>::cend() const
 {
 	return Vector<Type>::Iterator(this, current);
 }
@@ -269,23 +281,15 @@ inline void Vector<Type>::clear()
 }
 
 template <typename Type>
-inline Type &Vector<Type>::operator[](const size_t index) const
+inline Type &Vector<Type>::operator[](const size_t index)
 {
 	return data[index];
 }
 
 template <typename Type>
-inline bool Vector<Type>::operator==(const Vector<Type> &other) const
+const Type &Vector<Type>::operator[](const size_t index) const
 {
-	if (this->current != other.current)
-		return false;
-
-	for (size_t i = 0; i < current; ++i)
-	{
-		if (!(data[i] == other.data[i]))
-			return false;
-	}
-	return true;
+	return data[index];
 }
 
 template <typename Type>

@@ -19,7 +19,10 @@ Json *ObjectCreator::create_json(const String &val) const
 
 bool ObjectCreator::get_val(const String &_obj) const
 {
-    return (_obj[0] == '{');
+    for (size_t i = 0; i < _obj.size(); ++i)
+        if (_obj[i] == '{')
+            return true;
+    return false;
 }
 
 String ObjectCreator::remove_curly_braces(const String &val) const

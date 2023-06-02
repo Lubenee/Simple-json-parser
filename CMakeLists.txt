@@ -33,7 +33,7 @@ set (src
 add_executable(Json ${src})
 target_include_directories(Json PUBLIC 
                         Libraries/ 
-                        Headers 
+                        Headers/ 
                         Headers/JsonChildren/
                         Headers/JsonCreators/
 )

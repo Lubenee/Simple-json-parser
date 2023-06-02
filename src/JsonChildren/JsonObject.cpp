@@ -20,7 +20,7 @@ JsonObject &JsonObject::operator=(const JsonObject &rhs)
 
 const bool JsonObject::search(const String &key) const
 {
-    Vector<Pair> matches;
+    static Vector<Pair> matches;
     for (size_t i = 0; i < val.size(); ++i)
     {
         if (val[i].key.includes(key))

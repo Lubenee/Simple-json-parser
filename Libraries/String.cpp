@@ -12,7 +12,7 @@ String::String(const String &other)
 	: str(nullptr), m_size(0)
 {
 	if (other.str == nullptr)
-		throw "Invalid string operation.";
+		throw std::invalid_argument("Invalid string operation (empty string).");
 
 	this->str = new char[strlen(other.str) + 1];
 	strcpy(this->str, other.str);
