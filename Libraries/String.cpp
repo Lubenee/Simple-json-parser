@@ -4,15 +4,15 @@
 String::String(const char *new_string) : str(nullptr), m_size(0)
 {
 	this->str = new char[strlen(new_string) + 1];
-	this->m_size = strlen(new_string);
 	strcpy(this->str, new_string);
+	this->m_size = strlen(new_string);
 }
 
 String::String(const String &other)
 	: str(nullptr), m_size(0)
 {
-	if (other.str == nullptr)
-		throw std::invalid_argument("Invalid string operation (empty string).");
+	if (!other.str)
+		return;
 
 	this->str = new char[strlen(other.str) + 1];
 	strcpy(this->str, other.str);
@@ -285,6 +285,14 @@ String &String::operator+=(const String &rhs)
 {
 	if (rhs == "" || rhs.str == nullptr)
 		return *this;
+
+	if (!str)
+	{
+		str = new char[strlen(rhs.str) + 1];
+		strcpy(str, rhs.str);
+		m_size = strlen(rhs.str);
+		return *this;
+	}
 
 	size_t new_len = m_size + rhs.m_size;
 	char *new_str = new char[new_len + 1];

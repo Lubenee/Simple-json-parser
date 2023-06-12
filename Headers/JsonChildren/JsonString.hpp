@@ -16,6 +16,7 @@ public:
     Json *clone() const override;
     const JsonType get_type() const override;
     void log() const override;
+    String get_as_str() const override;
 
     ~JsonString() = default;
 

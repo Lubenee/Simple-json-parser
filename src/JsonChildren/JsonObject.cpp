@@ -18,27 +18,29 @@ JsonObject &JsonObject::operator=(const JsonObject &rhs)
     return *this;
 }
 
+Vector<JsonObject::Pair> JsonObject::search_matches;
 const bool JsonObject::search(const String &key) const
 {
-    static Vector<Pair> matches;
     for (size_t i = 0; i < val.size(); ++i)
     {
         if (val[i].key.includes(key))
-        {
-            matches.push_back(val[i]);
-        }
+            search_matches.push_back(val[i]);
         val[i].value->search(key);
     }
-
-    if (matches.empty())
+    if (search_matches.empty())
         return false;
+    return true;
+}
 
-    for (size_t i = 0; i < matches.size(); ++i)
+void JsonObject::log_search_results() const
+{
+    for (Pair &match : search_matches)
     {
-        matches[i].value->log();
+        match.value->log();
         std::cout << '\n';
     }
-    return true;
+    search_matches.clear();
+    std::cout << std::flush;
 }
 
 bool JsonObject::contains(const String &_value) const
@@ -69,27 +71,41 @@ Json *JsonObject::clone() const { return new JsonObject(val); }
 const JsonType JsonObject::get_type() const { return JsonType::Object; }
 void JsonObject::log() const
 {
-    std::cout << "{\n";
+    std::cout << this->get_as_str();
+}
+
+String JsonObject::get_as_str() const
+{
+    String temp;
+    for (size_t i = 0; i < format_spaces; ++i)
+        temp += " ";
+    temp += "{\n";
     format_spaces += 2;
 
-    JsonType prev_elem = JsonType::Null;
     for (size_t i = 0; i < val.size(); ++i)
     {
-        for (size_t i = 0; i < format_spaces; ++i)
-            std::cout << ' ';
 
-        std::cout << Quote << val[i].key << Quote << " : ";
-        val[i].value->log();
+        for (size_t i = 0; i < format_spaces; ++i)
+            temp += " ";
+
+        temp += Quote;
+        temp += val[i].key;
+        temp += Quote;
+        temp += " : ";
+        if (val[i].value->log_space())
+            temp += "\n";
+
+        temp += val[i].value->get_as_str();
         if (i != val.size() - 1)
-            std::cout << ",\n";
-        prev_elem = val[i].value->get_type();
+            temp += ",\n";
     }
     format_spaces -= 2;
 
-    std::cout << '\n';
+    temp += "\n";
     for (size_t i = 0; i < format_spaces; ++i)
-        std::cout << ' ';
-    std::cout << '}';
+        temp += " ";
+    temp += "}";
+    return temp;
 }
 
 JsonObject::~JsonObject() {}
@@ -100,22 +116,22 @@ JsonObject::~JsonObject() {}
 /*==========================================================================*/
 /*==========================================================================*/
 
-Pair::Pair() : value(nullptr), key("") {}
+JsonObject::Pair::Pair() : value(nullptr), key("") {}
 
-Pair::Pair(const Json *_value) : key("")
+JsonObject::Pair::Pair(const Json *_value) : key("")
 {
     value = _value->clone();
 }
 
-Pair::Pair(const Json *_value, const String &_key)
+JsonObject::Pair::Pair(const Json *_value, const String &_key)
 {
     value = _value->clone();
     key = _key;
 }
 
-Pair::Pair(const Pair &rhs) : value(rhs.value->clone()), key(rhs.key) {}
+JsonObject::Pair::Pair(const JsonObject::Pair &rhs) : value(rhs.value->clone()), key(rhs.key) {}
 
-Pair &Pair::operator=(const Pair &rhs)
+JsonObject::Pair &JsonObject::Pair::operator=(const JsonObject::Pair &rhs)
 {
     if (this == &rhs)
         return *this;
@@ -127,9 +143,9 @@ Pair &Pair::operator=(const Pair &rhs)
     return *this;
 }
 
-bool Pair::operator==(const Pair &rhs)
+bool JsonObject::Pair::operator==(const JsonObject::Pair &rhs)
 {
     return false; // TODO?
 }
 
-Pair::~Pair() { delete value; }
+JsonObject::Pair::~Pair() { delete value; }

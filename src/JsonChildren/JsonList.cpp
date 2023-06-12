@@ -25,34 +25,33 @@ JsonList &JsonList::operator=(const JsonList &rhs)
 
 void JsonList::log() const
 {
-    std::cout << "[";
+    std::cout << this->get_as_str();
+}
 
-    bool nested_objects = (val[0]->get_type() == JsonType::Object);
-    if (nested_objects)
-        std::cout << '\n';
-
+String JsonList::get_as_str() const
+{
+    String temp;
+    for (size_t i = 0; i < format_spaces; ++i)
+        temp += " ";
+    temp += "[";
     format_spaces += 2;
     for (size_t i = 0; i < val.size(); ++i)
     {
-        if (nested_objects)
-            for (size_t i = 0; i < format_spaces; ++i)
-                std::cout << ' ';
+        if (val[i]->log_space())
+            temp += "\n";
 
-        val[i]->log();
+        temp += val[i]->get_as_str();
 
-        bool last_elem = (i != val.size() - 1);
-        if (last_elem)
-            std::cout << ", ";
-        if (nested_objects)
-            std::cout << std::endl;
+        if (i != val.size() - 1)
+            temp += ", ";
     }
     format_spaces -= 2;
+    temp += "\n";
 
-    if (nested_objects)
-        for (size_t i = 0; i < format_spaces; ++i)
-            std::cout << ' ';
-
-    std::cout << ']';
+    for (size_t i = 0; i < format_spaces; ++i)
+        temp += " ";
+    temp += "]";
+    return temp;
 }
 
 const bool JsonList::search(const String &key) const

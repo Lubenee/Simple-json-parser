@@ -17,12 +17,13 @@ Json *JsonInt::clone() const
 }
 const JsonType JsonInt::get_type() const { return JsonType::Integer; }
 
-bool JsonInt::contains(const int &_value) const
-{
-    return (val == _value ? true : false);
-}
-
 void JsonInt::log() const
 {
-    std::cout << val;
+    std::cout << this->get_as_str();
+}
+
+String JsonInt::get_as_str() const
+{
+    std::string temp = std::to_string(val);
+    return temp.c_str();
 }

@@ -15,7 +15,7 @@ public:
     const JsonType get_type() const override;
     void log() const override;
 
-    bool contains(const int &_value) const override;
+    String get_as_str() const override;
 
     ~JsonInt() = default;
 

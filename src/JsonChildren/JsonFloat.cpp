@@ -18,12 +18,13 @@ Json *JsonFloat::clone() const
 
 const JsonType JsonFloat::get_type() const { return JsonType::Floating; }
 
-bool JsonFloat::contains(const float &_value) const
-{
-    return (_value == val ? true : false);
-}
-
 void JsonFloat::log() const
 {
-    std::cout << val;
+    std::cout << this->get_as_str();
+}
+
+String JsonFloat::get_as_str() const
+{
+    std::string temp = std::to_string(val);
+    return temp.c_str();
 }

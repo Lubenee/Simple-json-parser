@@ -16,8 +16,12 @@ public:
     Json *clone() const override;
     const JsonType get_type() const override;
     void log() const override;
+    String get_as_str() const override;
 
     ~JsonList();
+
+protected:
+    bool log_space() const override { return true; }
 
 private:
     Vector<Json *> val;

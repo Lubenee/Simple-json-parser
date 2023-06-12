@@ -18,12 +18,17 @@ public:
 
 private:
     bool open_file(const String &_filename);
-    // void save_to_file(const String &_filename);
-    // save
-    // saveas
+    void saveas(const String &_path, const String &_name);
+    void save() const;
 
     void update_interface();
     void log_main_menu() const;
+
+    // contains
+    // set -path -string
+    // create -path -string
+    // delete -path
+    // move -from -to
 
 private:
     bool is_running;

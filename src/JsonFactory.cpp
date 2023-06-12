@@ -19,7 +19,12 @@ Json *JsonFactory::parse_value(const char *value) const
     String val(value);
 
     const JsonCreator *crt = get_creator(val);
+    try{
     return crt->create_json(val);
+    }
+    catch (...){
+        throw std::invalid_argument("Couldn't parse Json");
+    }
 }
 
 Json *JsonFactory::parse_value(std::ifstream &ifs) const

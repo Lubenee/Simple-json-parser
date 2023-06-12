@@ -11,9 +11,11 @@ public:
     JsonNull(const JsonNull &rhs);
     JsonNull &operator=(const JsonNull &rhs);
 
-    bool contains(const String& _value )const override;
+    bool contains(const String &_value) const override;
 
     void log() const override;
+    String get_as_str() const override;
+
     const JsonType get_type() const override;
     Json *clone() const override;
 

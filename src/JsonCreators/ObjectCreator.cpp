@@ -12,16 +12,15 @@ Json *ObjectCreator::create_json(const String &val) const
     }
     catch (...)
     {
-        std::cout << "parse unsuccessfull.\n"; // todo
+        throw std::invalid_argument("Couldn't parse Json.");
     }
     return nullptr;
 }
 
 bool ObjectCreator::get_val(const String &_obj) const
 {
-    for (size_t i = 0; i < _obj.size(); ++i)
-        if (_obj[i] == '{')
-            return true;
+    if (_obj[0] == '{')
+        return true;
     return false;
 }
 
@@ -60,7 +59,7 @@ String ObjectCreator::parse_obj_key(const String &value, size_t &index) const
 Json *ObjectCreator::parse_object(const String &value) const
 {
     size_t index = 0;
-    Vector<Pair> temp;
+    Vector<JsonObject::Pair> temp;
     while (index < value.length())
     {
         String new_key(parse_obj_key(value, index));
@@ -69,7 +68,8 @@ Json *ObjectCreator::parse_object(const String &value) const
             continue;
 
         Json *_json = JsonFactory::get().parse_value(new_element.c_str());
-        temp.push_back({_json, new_key});
+        if (_json)
+            temp.push_back({_json, new_key});
         delete _json;
     }
 
@@ -125,6 +125,8 @@ String JsonParse::parse_value(const String &value, size_t &index)
         }
         else if (value[i] == ' ' && !in_string && !in_object)
         {
+            if (i == value.length() - 1)
+                index = i + 1;
             continue;
         }
         else if (value[i] == ',' && stack.empty())
@@ -144,18 +146,17 @@ String JsonParse::parse_value(const String &value, size_t &index)
             delimiter = ']';
             if (stack.back() == '[')
             {
-                in_list = false;
                 stack.pop_back();
+                if (stack.back() != '[')
+                    in_list = false;
             }
-            else
-                stack.push_back(delimiter);
             new_value[string_index++] = delimiter;
         }
         else if (value[i] == '{')
         {
             delimiter = '{';
-            stack.push_back(delimiter);
             new_value[string_index++] = delimiter;
+            stack.push_back(delimiter);
             in_object = true;
         }
         else if (value[i] == '}')
@@ -163,11 +164,10 @@ String JsonParse::parse_value(const String &value, size_t &index)
             delimiter = '}';
             if (stack.back() == '{')
             {
-                in_object = false;
                 stack.pop_back();
+                if (stack.back() != '{')
+                    in_object = false;
             }
-            else
-                stack.push_back(delimiter);
             new_value[string_index++] = delimiter;
         }
         else
@@ -179,6 +179,7 @@ String JsonParse::parse_value(const String &value, size_t &index)
     if (stack.empty())
     {
         new_value_str = new_value;
+
         return new_value_str;
     }
     else

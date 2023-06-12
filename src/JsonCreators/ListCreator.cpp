@@ -19,9 +19,8 @@ Json *ListCreator::create_json(const String &val) const
 
 bool ListCreator::get_val(const String &_obj) const
 {
-    for (size_t i = 0; i < _obj.size(); ++i)
-        if (_obj[i] == '[')
-            return true;
+    if (_obj[0] == '[')
+        return true;
     return false;
 }
 

@@ -273,10 +273,9 @@ template <typename Type>
 inline void Vector<Type>::clear()
 {
 	if (data)
-	{
 		delete[] data;
-		data = nullptr;
-	}
+	data = new Type[1];
+	m_capacity = 1;
 	current = 0;
 }
 

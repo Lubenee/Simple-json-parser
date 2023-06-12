@@ -25,5 +25,14 @@ bool JsonString::contains(const String &_value) const
 
 void JsonString::log() const
 {
-    std::cout << Quote << val << Quote;
+    std::cout << this->get_as_str();
+}
+
+String JsonString::get_as_str() const
+{
+    String temp;
+    temp += "\"";
+    temp += val;
+    temp += "\"";
+    return temp;
 }

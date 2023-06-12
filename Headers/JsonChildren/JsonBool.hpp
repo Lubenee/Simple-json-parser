@@ -10,13 +10,12 @@ public:
     JsonBool(bool _val);
     JsonBool(const JsonBool &rhs);
 
-    bool contains(const bool &_value) const override;
-
     JsonBool &operator=(const JsonBool &rhs);
     const JsonType get_type() const override;
     Json *clone() const override;
 
     void log() const override;
+    String get_as_str() const override;
 
     ~JsonBool() = default;
 

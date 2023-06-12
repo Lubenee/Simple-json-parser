@@ -17,9 +17,17 @@ bool JsonNull::contains(const String &_value) const
 
 void JsonNull::log() const
 {
-    std::cout << "null";
+    std::cout << this->get_as_str();
 }
 
-const JsonType JsonNull::get_type() const { return JsonType::Null; }
+String JsonNull::get_as_str() const
+{
+    return "null";
+}
+
+const JsonType JsonNull::get_type() const
+{
+    return JsonType::Null;
+}
 
 Json *JsonNull::clone() const { return new JsonNull(); }
