@@ -25,9 +25,6 @@ private:
     void log_main_menu() const;
 
     // contains
-    // set -path -string
-    // create -path -string
-    // delete -path
     // move -from -to
 
 private:

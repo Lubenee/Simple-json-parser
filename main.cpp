@@ -1,7 +1,5 @@
 #include "Interface.hpp"
-using std::string;
 int main(int argc, char *argv[])
-
 {
     String file = INVALID_FILENAME;
     if (argc > 1)

@@ -19,10 +19,17 @@ Json *JsonFactory::parse_value(const char *value) const
     String val(value);
 
     const JsonCreator *crt = get_creator(val);
-    try{
-    return crt->create_json(val);
+    if (!crt)
+    {
+        std::cerr << "Couldn't parse Json.\n";
+        return nullptr;
     }
-    catch (...){
+    try
+    {
+        return crt->create_json(val);
+    }
+    catch (...)
+    {
         throw std::invalid_argument("Couldn't parse Json");
     }
 }

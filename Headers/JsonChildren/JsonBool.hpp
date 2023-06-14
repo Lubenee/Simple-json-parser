@@ -16,6 +16,7 @@ public:
 
     void log() const override;
     String get_as_str() const override;
+    virtual bool contains(const String &_value) const override;
 
     ~JsonBool() = default;
 

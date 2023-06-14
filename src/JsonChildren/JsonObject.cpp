@@ -1,3 +1,4 @@
+#include "JsonFactory.hpp"
 #include "JsonObject.hpp"
 
 JsonObject::JsonObject() {}
@@ -50,21 +51,123 @@ bool JsonObject::contains(const String &_value) const
     {
         if (val[i].value->contains(_value))
         {
-            bool nested_obj = val[i].value->get_type() == JsonType::Object;
-            if (nested_obj)
-                std::cout << val[i].key << '/';
-            else
-            {
-                std::cout << "Value " << Quote << _value << Quote
-                          << " found at key: ";
-                std::cout << val[i].key << '/';
-            }
-            if (!nested_obj)
-                std::cout << std::endl;
+            std::cout << val[i].key << '\n';
             found = true;
         }
     }
     return found;
+}
+
+void JsonObject::create(const String &_path, const String &new_value, int depth)
+{
+    Vector<String> tokens;
+    try
+    {
+        _path.split('/', tokens);
+    }
+    catch (...)
+    {
+        std::cerr << "JSON::CREATE::Invalid path.\n";
+    }
+
+    if (depth == tokens.size() - 1)
+    {
+        for (Pair &pair : val)
+        {
+            if (pair.key == tokens.back())
+            {
+                std::cerr << "Such an element already exists within this path.\n";
+                return;
+            }
+        }
+        JsonObject::Pair temp;
+        temp.key = tokens.back();
+        temp.value = JsonFactory::get().parse_value(new_value.c_str());
+        if (temp.value)
+            val.push_back(temp);
+        else
+            std::cerr << "Invalid json syntax.";
+        return;
+    }
+
+    for (Pair &pair : val)
+    {
+        if (pair.key == tokens[depth])
+        {
+            pair.value->create(_path, new_value, ++depth);
+        }
+    }
+}
+
+void JsonObject::set(const String &_path, const String &new_value, int depth)
+{
+    Vector<String> tokens;
+    try
+    {
+        _path.split('/', tokens);
+    }
+    catch (...)
+    {
+        std::cerr << "JSON::CREATE::Invalid path.\n";
+    }
+
+    if (depth == tokens.size() - 1)
+    {
+        for (Pair &pair : val)
+        {
+            if (pair.key == tokens.back())
+            {
+                delete pair.value;
+                Json *temp = JsonFactory::get().parse_value(new_value.c_str());
+                if (temp)
+                    pair.value = temp;
+                else
+                    std::cerr << "Invalid json syntax.\n";
+                temp = nullptr;
+                return;
+            }
+        }
+        std::cerr << "Invalid path.\n";
+    }
+
+    for (Pair &pair : val)
+    {
+        if (pair.key == tokens[depth])
+        {
+            pair.value->set(_path, new_value, ++depth);
+        }
+    }
+}
+
+void JsonObject::erase(const String &_path, int depth)
+{
+    Vector<String> tokens;
+    try
+    {
+        _path.split('/', tokens);
+    }
+    catch (...)
+    {
+        std::cerr << "JSON::CREATE::Invalid path.\n";
+    }
+    if (depth == tokens.size() - 1)
+    {
+        for (size_t i = 0; i < val.size(); ++i)
+            if (val[i].key == tokens.back())
+            {
+                val.erase(i);
+                return;
+            }
+        std::cerr << "Invalid path.\n";
+    }
+
+    for (Pair &pair : val)
+    {
+        if (pair.key == tokens[depth])
+        {
+            pair.value->erase(_path, ++depth);
+        }
+    }
 }
 
 Json *JsonObject::clone() const { return new JsonObject(val); }

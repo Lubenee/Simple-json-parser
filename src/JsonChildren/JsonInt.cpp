@@ -22,6 +22,20 @@ void JsonInt::log() const
     std::cout << this->get_as_str();
 }
 
+bool JsonInt::contains(const String &_value) const
+{
+    int _val = 0;
+    try
+    {
+        _val = std::stoi(_value.c_str());
+    }
+    catch (const std::invalid_argument &e)
+    {
+        return false;
+    }
+    return _val == val;
+}
+
 String JsonInt::get_as_str() const
 {
     std::string temp = std::to_string(val);

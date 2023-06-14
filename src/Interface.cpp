@@ -44,6 +44,10 @@ void Interface::update_interface()
         if (open_file(filename))
             current->log();
     }
+    else if (command == "log")
+    {
+        current->log();
+    }
     else if (command == "open")
     {
         if (tokens.size() > 1)
@@ -61,6 +65,37 @@ void Interface::update_interface()
         }
         else
             std::cout << "Invalid or missing key.";
+    }
+    else if (command == "contains")
+    {
+        if (tokens.size() > 1)
+        {
+            if (!current->contains(tokens[1]))
+                std::cout << "No results!";
+            else
+                current->log_contains_results();
+        }
+    }
+    else if (command == "create")
+    {
+        if (tokens.size() > 2)
+            current->create(tokens[1], tokens[2]);
+        else
+            std::cerr << "Invalid path or value.";
+    }
+    else if (command == "set")
+    {
+        if (tokens.size() > 2)
+            current->set(tokens[1], tokens[2]);
+        else
+            std::cerr << "Invalid path or value.";
+    }
+    else if (command == "erase" || command == "delete")
+    {
+        if (tokens.size() > 1)
+            current->erase(tokens[1]);
+        else
+            std::cerr << "Invalid path.";
     }
     else if (command == "saveas")
     {
@@ -122,7 +157,8 @@ void Interface::saveas(const String &_path, const String &_name)
     std::ofstream ofs;
     String temp(_path);
     temp += _name;
-    if (!temp.includes(".json"))
+
+    if (!_name.includes(".json"))
         temp += ".json";
 
     ofs.open(temp.c_str(), std::ios::out | std::ios::trunc);
@@ -151,7 +187,8 @@ void Interface::log_main_menu() const
               << "'Open' -> 'Filepath' to try a new file.\n";
     if (loaded_file)
         std::cout << "'Parse' To parse and display loaded file.\n"
-                  << "'Search' -> 'Key' To display all values corresponding to that key.\n"
+                  << "'Search' -> 'Key' To display all keys corresponding to that input.\n"
+                  << "'Contains'-> 'Value' To display all keys that have input as it's value.\n"
                   << "'Saveas' -> 'Path' -> 'Filename' To save current file to a new location.\n"
                   << std::flush;
     std::cout << "--------------------------------------------------------------------------\n";

@@ -31,9 +31,13 @@ public:
     virtual Json *clone() const = 0;
     virtual const JsonType get_type() const = 0;
     virtual void log_search_results() const {}
+    virtual void log_contains_results() const {}
 
     virtual const bool search(const String &key) const;
-    virtual bool contains(const String &_value) const { return false; }
+    virtual bool contains(const String &_value) const = 0;
+    virtual void create(const String &_path, const String &new_value, int depth = 0) {}
+    virtual void set(const String &_path, const String &new_value, int depth = 0) {}
+    virtual void erase(const String &path, int depth = 0) {}
 
     virtual ~Json() = default;
 

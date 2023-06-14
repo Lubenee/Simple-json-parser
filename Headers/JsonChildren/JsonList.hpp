@@ -17,6 +17,9 @@ public:
     const JsonType get_type() const override;
     void log() const override;
     String get_as_str() const override;
+    void create(const String &_path, const String &new_val, int depth = 0) override;
+
+    virtual void erase(const String &path, int depth = 0) override;
 
     ~JsonList();
 

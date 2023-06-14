@@ -31,6 +31,12 @@ public:
 
     bool contains(const String &_value) const override;
 
+    void create(const String &_path, const String &new_value, int depth = 0) override;
+
+    virtual void set(const String &_path, const String &new_value, int depth = 0) override;
+
+    virtual void erase(const String &path, int depth = 0) override;
+
     Json *clone() const override;
     const JsonType get_type() const override;
     void log() const override;
@@ -44,6 +50,7 @@ public:
 private:
     Vector<Pair> val;
     static Vector<Pair> search_matches;
+    static Vector<Json *> contains_matches;
 };
 
 #endif // JSON_OBJECT_H

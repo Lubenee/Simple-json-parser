@@ -1,4 +1,5 @@
 #include "JsonList.hpp"
+#include "JsonFactory.hpp"
 
 JsonList::JsonList() {}
 
@@ -46,10 +47,13 @@ String JsonList::get_as_str() const
             temp += ", ";
     }
     format_spaces -= 2;
-    temp += "\n";
+    if (!val[val.back()->log_space()])
+    {
+        temp += "\n";
+        for (size_t i = 0; i < format_spaces; ++i)
+            temp += " ";
+    }
 
-    for (size_t i = 0; i < format_spaces; ++i)
-        temp += " ";
     temp += "]";
     return temp;
 }
@@ -71,6 +75,55 @@ bool JsonList::contains(const String &value) const
         }
     }
     return false;
+}
+
+void JsonList::create(const String &_path, const String &new_value, int depth)
+{
+    Vector<String> tokens;
+    try
+    {
+        _path.split('/', tokens);
+    }
+    catch (...)
+    {
+        std::cerr << "JSON::CREATE::Invalid path.\n";
+    }
+    int size = val.size();
+
+    if (depth == tokens.size() - 1)
+    {
+        Json *temp;
+        temp = JsonFactory::get().parse_value(new_value.c_str());
+        if (temp)
+            val.push_back(temp);
+        else
+            std::cerr << "incorrect json syntax.";
+        temp = nullptr;
+        return;
+    }
+
+    for (Json *value : val)
+    {
+        value->create(_path, new_value, ++depth);
+    }
+}
+
+void JsonList::erase(const String &_path, int depth)
+{
+    Vector<String> tokens;
+    try
+    {
+        _path.split('/', tokens);
+    }
+    catch (...)
+    {
+        std::cerr << "JSON::CREATE::Invalid path.\n";
+    }
+
+    for (Json *elem : val)
+    {
+        elem->erase(_path, ++depth);
+    }
 }
 
 const JsonType JsonList::get_type() const { return JsonType::List; }
