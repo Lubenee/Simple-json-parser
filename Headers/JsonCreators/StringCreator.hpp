@@ -7,8 +7,24 @@
 class StringCreator : public JsonCreator
 {
 public:
+    /**
+     * @brief Construct a new String Creator object.
+     *          This constructor initializes the JsonCreator's
+     *           constructor with "String" name.
+     */
     StringCreator();
+    /**
+     * @brief Create a json object
+     *
+     * @param val
+     * @return Json*
+     */
     Json *create_json(const String &val) const override;
+    /**
+     * @brief Get the val object
+     *  Returns true if _obj is a string surrounded with quotes.
+     * @param _obj
+     */
     bool get_val(const String &_obj) const override;
     ~StringCreator() = default;
 

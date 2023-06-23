@@ -7,8 +7,26 @@
 class FloatCreator : public JsonCreator
 {
 public:
+    /**
+     * @brief Construct a new Float Creator object.
+     *   This constructor initializes the JsonCreator's
+     *   constructor with "Float" name.
+     *
+     */
     FloatCreator();
+    /**
+     * @brief Create a json object
+     *
+     * @param val
+     * @return Json*
+     */
     Json *create_json(const String &val) const override;
+    /**
+     * @brief Get the val object
+     *  Returns true if _obj is a valid float value.
+     *
+     * @param _obj
+     */
     bool get_val(const String &_obj) const override;
     ~FloatCreator() = default;
 

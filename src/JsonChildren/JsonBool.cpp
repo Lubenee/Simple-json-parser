@@ -12,7 +12,6 @@ JsonBool &JsonBool::operator=(const JsonBool &rhs)
 }
 
 Json *JsonBool::clone() const { return new JsonBool(val); }
-const JsonType JsonBool::get_type() const { return JsonType::Boolean; }
 void JsonBool::log() const
 {
     std::cout << this->get_as_str();

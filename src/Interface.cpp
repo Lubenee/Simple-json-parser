@@ -10,11 +10,6 @@ Interface::Interface(const String &_filename)
         loaded_file = true;
 }
 
-Json *Interface::get_current() const
-{
-    return current->clone();
-}
-
 void Interface::run()
 {
     while (is_running)
@@ -96,6 +91,18 @@ void Interface::update_interface()
             current->erase(tokens[1]);
         else
             std::cerr << "Invalid path.";
+    }
+    else if (command == "move")
+    {
+        if (tokens.size() > 2)
+            current->move(tokens[1], tokens[2]);
+        else if (tokens.size() > 1)
+        {
+            String temp = "";
+            current->move(tokens[1], temp);
+        }
+        else
+            std::cerr << "Invalid path(s).";
     }
     else if (command == "saveas")
     {
@@ -189,6 +196,10 @@ void Interface::log_main_menu() const
         std::cout << "'Parse' To parse and display loaded file.\n"
                   << "'Search' -> 'Key' To display all keys corresponding to that input.\n"
                   << "'Contains'-> 'Value' To display all keys that have input as it's value.\n"
+                  << "'Create' -> 'Path' -> 'Value' To create a new element on the given path.\n"
+                  << "'Set' -> 'Path' -> 'Value' To change an existing's key value.\n"
+                  << "'Delete' -> 'Path' To delete the specified key.\n"
+                  << "'Move' -> 'Path From' -> 'Path To' To move key from_to.\n" // TODO
                   << "'Saveas' -> 'Path' -> 'Filename' To save current file to a new location.\n"
                   << std::flush;
     std::cout << "--------------------------------------------------------------------------\n";

@@ -6,10 +6,29 @@
 class JsonCreator
 {
 public:
+    /**
+     * @brief Construct a new Json Creator object
+     *
+     * @param _val The creator's "identifier".
+     */
     JsonCreator(const String &_val);
 
+    /**
+     * @brief Get the val object. The child creators attempt to
+     * recognize what command is in the _obj string.
+     *
+     * @param _obj
+     * @return true     They recognized a command.
+     * @return false    They did not recognize a command.
+     */
     virtual bool get_val(const String &_obj) const = 0;
 
+    /**
+     * @brief Attempt to create a new json object
+     *
+     * @param val       The value that's to be parsed.
+     * @return Json*    The Value returned as a Json pointer.
+     */
     virtual Json *create_json(const String &val) const = 0;
     virtual ~JsonCreator() = default;
 

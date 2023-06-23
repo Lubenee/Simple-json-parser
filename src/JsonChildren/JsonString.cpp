@@ -16,8 +16,6 @@ Json *JsonString::clone() const
     return new JsonString(val);
 }
 
-const JsonType JsonString::get_type() const { return JsonType::String; }
-
 bool JsonString::contains(const String &_value) const
 {
     return val.includes(_value);

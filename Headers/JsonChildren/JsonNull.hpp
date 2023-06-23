@@ -6,17 +6,30 @@
 class JsonNull : public Json
 {
 public:
+    /**
+        @brief
+            Default constructor.
+    */
     JsonNull();
-    JsonNull(const String &_key);
-    JsonNull(const JsonNull &rhs);
     JsonNull &operator=(const JsonNull &rhs);
 
     bool contains(const String &_value) const override;
 
+    /**
+        @brief
+        Logs "Null".
+    */
     void log() const override;
+    /**
+        @brief
+            returns "Null".
+    */
     String get_as_str() const override;
 
-    const JsonType get_type() const override;
+    /**
+        @brief
+            Clone method.
+    */
     Json *clone() const override;
 
     ~JsonNull() = default;

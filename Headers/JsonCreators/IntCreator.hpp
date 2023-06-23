@@ -7,8 +7,25 @@
 class IntCreator : public JsonCreator
 {
 public:
+    /**
+     * @brief Construct a new Int Creator object.
+     *          This constructor initializes the JsonCreator's
+     *           constructor with "Integer" name.
+     */
     IntCreator();
+    /**
+     * @brief Create a json object
+     *
+     * @param val
+     * @return Json*
+     */
     Json *create_json(const String &val) const override;
+    /**
+     * @brief Get the val object
+     *      Returns true if _obj is a valid integer value.
+     *
+     * @param _obj
+     */
     bool get_val(const String &_obj) const override;
     ~IntCreator() = default;
 

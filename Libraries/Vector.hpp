@@ -40,58 +40,180 @@ public:
 	};
 
 public:
+	/**
+	 * @brief Construct a new Vector object
+	 */
 	Vector();
-
+	/**
+	 * @brief Construct a new Vector object with an initializer list.
+	 * @param lst
+	 */
 	Vector(std::initializer_list<Type> lst);
 
+	/**
+	 * @brief Construct a new Vector object and reserve a given ammount of space.
+	 * @param _size
+	 */
 	explicit Vector(const int _size);
 
+	/**
+	 * @brief Construct a new Vector object
+	 * 	Copy constructor. It requires that the objects have a defined operator=.
+	 * @param other
+	 */
 	Vector(const Vector<Type> &other);
 
-	/* Pushes a new item in the array. */
+	/**
+	 * @brief Pushes a new item to the back of the array.
+	 * @param new_data
+	 */
 	void push_back(const Type &new_data);
+
+	/**
+	 * @brief Removes the last element from the array.
+	 * 	It's the user's responsibility to free any memory, if the object
+	 * 	requires it.
+	 */
 	void pop_back();
 
+	/**
+	 * @brief Returns an iterator to the start of the vector.
+	 * @return Iterator
+	 */
 	Iterator begin();
+	/**
+	 * @brief Returns an iterator to the end of the vector.
+	 * @return Iterator
+	 */
 	Iterator end();
 
+	/**
+	 * @brief Returns a const iterator to the start of the vector.
+	 * @return Iterator
+	 */
 	const Iterator cbegin() const;
+	/**
+	 * @brief Returns a const iterator to the end of the vector.
+	 * @return Iterator
+	 */
 	const Iterator cend() const;
 
-	/* Returns the vector's size. */
+	/**
+	 * @brief Returns the vector's size.
+	 * @return size_t
+	 */
 	size_t size() const;
-	/* Returns the vector's capacity. */
+
+	/**
+	 * @brief Returns the vector's capacity.
+	 * @return size_t
+	 */
 	size_t capacity() const;
-	/* Returns true if the vector is empty. */
+	/**
+	 * @brief Returns true if the vector is empty.
+	 */
 	bool empty() const;
 
-	/*Returns a reference to the vector's last element. */
+	/**
+	 * @brief Returns a reference to the vector's last element.
+	 * @return Type&
+	 */
 	Type &back() const;
 
-	/*Returns a reference to the vector's first element. */
+	/**
+	 * @brief Returns a reference to the vector's first element.
+	 * @return Type&
+	 */
 	Type &front() const;
 
-	/*Returns true if the vector contains the passed element. */
+	/**
+	 * @brief Returns true if the vector contains the passed element.
+	 *
+	 * @param elem
+	 */
 	bool contains(const Type &elem) const;
 
+	/**
+	 * @brief Returns a reference to the passed element, if one is in the vector.
+	 * 	This method requires that the objects have a valid operator==.
+	 * 	If such an element isn't found, the method throws invalid_argument.
+	 *
+	 * @param elem
+	 * @return Type&
+	 */
 	Type &at(const Type &elem) const;
 
-	/*Clears all elements. If any memory is allocated by the user, it's also the user's responsibility to free it manually.*/
+	/**
+	 * @brief Clears all elements. If any memory is allocated by the user,
+	 * it's also the user's responsibility to free it manually.
+	 */
 	void clear();
 
+	/** @brief
+	 * Reserves memory to accommodate a specified capacity for the Vector.
+	 *
+	 * This method ensures that the Vector has enough memory allocated to hold
+	 * at least the specified number of elements. If the requested capacity is
+	 * less than or equal to the current capacity, this method has no effect.
+	 * Otherwise, it allocates additional memory to accommodate the requested
+	 * capacity, potentially increasing the Vector's capacity.
+	 *
+	 * @param new_capacity The desired capacity for the Vector.
+	 *
+	 * NOTE: This method does not modify the Vector's size or change the actual
+	 *       number of elements stored in it. To add elements to the Vector,
+	 *       use the `push_back` method after reserving
+	 *       sufficient capacity.
+	 */
 	void reserve(const size_t new_capacity);
 
-	/* Removes the element at *index*. The method does not handle errors if the index is out of range. */
+	/**
+	 * @brief Removes the element at *index*. The method does not handle errors if the index is out of range.
+	 * @param index
+	 */
 	void erase(const size_t index);
 
-	/* Removes the passed element, if one is in the data array. Else throws an error. */
+	/**
+	 * @brief Removes the passed element, if one is in the data array.
+	 * Else throws invalid_argument.
+	 * @param elem
+	 */
 	void erase(const Type &elem);
 
-	/*Returns a reference to the element at *index*. The method does not handle errors if the index is out of range.*/
+	/**
+	 * @brief Returns a reference to the element at *index*.
+	 * The method does not handle errors if the index is out of range
+	 *
+	 * @param index
+	 * @return Type&
+	 */
 	Type &operator[](const size_t index);
 
+	/**
+	 * @brief Returns a const reference to the element at *index*.
+	 * The method does not handle errors if the index is out of range
+	 *
+	 * @param index
+	 * @return Type&
+	 */
 	const Type &operator[](const size_t index) const;
 
+	/** @brief
+	 * Assigns the contents of another Vector to this Vector.
+	 *
+	 * This operator assigns the elements of the specified Vector to the current
+	 * Vector, replacing its current contents. The size and capacity of this Vector
+	 * may change to match the size of the assigned Vector. The assignment operator
+	 * performs a deep copy of the elements, so each element is individually copied
+	 * to the destination Vector. This requires that the elements in have a defined operator=.
+	 *
+	 * @param other The Vector whose elements are to be assigned.
+	 * @return A reference to the modified Vector after the assignment.
+	 *
+	 * NOTE: The assignment operator ensures that the current Vector is self-assignment
+	 *       safe. That is, assigning a Vector to itself has no effect and does not
+	 *       result in undefined behavior.
+	 */
 	Vector<Type> &operator=(const Vector<Type> &other);
 
 	~Vector();
@@ -302,6 +424,8 @@ inline void swap(Type *&a, Type *&b)
 template <typename Type>
 inline Vector<Type> &Vector<Type>::operator=(const Vector<Type> &other)
 {
+	if (this == &other)
+		return *this;
 	Vector<Type> temp(other);
 	swap(data, temp.data);
 

@@ -7,8 +7,24 @@
 class BoolCreator : public JsonCreator
 {
 public:
+    /**
+     * @brief Construct a new Bool Creator object.
+     *          This constructor initializes the JsonCreator's
+     *           constructor with "Bool" name.
+     */
     BoolCreator();
+    /**
+     * @brief Create a json object
+     *
+     * @param val
+     * @return Json*
+     */
     Json *create_json(const String &val) const override;
+    /**
+     * @brief Get the val object
+     *  Returns true if _obj is either "true" or "false".
+     * @param _obj
+     */
     bool get_val(const String &_obj) const;
     ~BoolCreator() = default;
 
@@ -24,7 +40,8 @@ private:
      * @brief
      * String to bool. Makes a bool from a string value.
      * \param[in]   val
-     * \retval bool val
+     * \retval true     val is "true"
+     * \retval false    val is "false"
      */
     bool stob(const String &val) const;
 };

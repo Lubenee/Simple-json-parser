@@ -15,7 +15,6 @@ Json *JsonInt::clone() const
 {
     return new JsonInt(val);
 }
-const JsonType JsonInt::get_type() const { return JsonType::Integer; }
 
 void JsonInt::log() const
 {

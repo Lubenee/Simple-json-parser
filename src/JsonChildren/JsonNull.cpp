@@ -1,8 +1,6 @@
 #include "JsonNull.hpp"
 
 JsonNull::JsonNull() {}
-JsonNull::JsonNull(const String &_key) {}
-JsonNull::JsonNull(const JsonNull &rhs) {}
 JsonNull &JsonNull::operator=(const JsonNull &rhs)
 {
     if (this == &rhs)
@@ -23,11 +21,6 @@ void JsonNull::log() const
 String JsonNull::get_as_str() const
 {
     return "null";
-}
-
-const JsonType JsonNull::get_type() const
-{
-    return JsonType::Null;
 }
 
 Json *JsonNull::clone() const { return new JsonNull(); }

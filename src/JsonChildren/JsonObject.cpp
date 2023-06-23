@@ -84,9 +84,13 @@ void JsonObject::create(const String &_path, const String &new_value, int depth)
         temp.key = tokens.back();
         temp.value = JsonFactory::get().parse_value(new_value.c_str());
         if (temp.value)
+        {
             val.push_back(temp);
+        }
         else
+        {
             std::cerr << "Invalid json syntax.";
+        }
         return;
     }
 
@@ -94,7 +98,7 @@ void JsonObject::create(const String &_path, const String &new_value, int depth)
     {
         if (pair.key == tokens[depth])
         {
-            pair.value->create(_path, new_value, ++depth);
+            pair.value->create(_path, new_value, depth + 1);
         }
     }
 }
@@ -162,16 +166,56 @@ void JsonObject::erase(const String &_path, int depth)
     }
 
     for (Pair &pair : val)
-    {
         if (pair.key == tokens[depth])
-        {
             pair.value->erase(_path, ++depth);
-        }
+}
+
+void JsonObject::move(const String &_from, String &_to,
+                      int depth)
+{
+    Vector<String> tokens_from;
+    try
+    {
+        _from.split('/', tokens_from);
+    }
+    catch (...)
+    {
+        std::cerr << "JSON::CREATE::Invalid path.\n";
+    }
+
+    if (depth == tokens_from.size() - 1)
+    {
+        bool found = false;
+        for (size_t i = 0; i < val.size(); ++i)
+            if (val[i].key == tokens_from.back())
+            {
+                found = true;
+                if (_to != "")
+                    if (_to[_to.size() - 1] != '/')
+                        _to += "/";
+                _to += val[i].key;
+                _to += "\\";
+                _to += val[i].value->get_as_str();
+                val.erase(i);
+                break;
+            }
+        if (!found)
+            std::cerr << "Invalid path.\n";
+    }
+
+    for (Pair &pair : val)
+        if (pair.key == tokens_from[depth])
+            pair.value->move(_from, _to, depth + 1);
+
+    if (depth == 0)
+    {
+        Vector<String> tokens;
+        _to.split('\\', tokens);
+        create(tokens[0], tokens[1]);
     }
 }
 
 Json *JsonObject::clone() const { return new JsonObject(val); }
-const JsonType JsonObject::get_type() const { return JsonType::Object; }
 void JsonObject::log() const
 {
     std::cout << this->get_as_str();

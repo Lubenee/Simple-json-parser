@@ -3,18 +3,48 @@
 
 #include "Json.hpp"
 
+/**
+    @brief
+        Publicly inherits the Json class.
+*/
 class JsonBool : public Json
 {
 public:
+    /**
+        @brief
+            Default constructor.
+    */
     JsonBool();
+
+    /**
+        @brief
+            Sets the object's value to the passed boolean.
+    */
     JsonBool(bool _val);
+
+    /**
+        @brief
+            Default copy constructor.
+    */
     JsonBool(const JsonBool &rhs);
 
     JsonBool &operator=(const JsonBool &rhs);
-    const JsonType get_type() const override;
+
+    /**
+        @brief
+            Clone method.
+    */
     Json *clone() const override;
 
+    /**
+        @brief
+            Logs the current boolean value.
+    */
     void log() const override;
+    /**
+        @brief
+            Returns the boolean value as a string.
+    */
     String get_as_str() const override;
     virtual bool contains(const String &_value) const override;
 

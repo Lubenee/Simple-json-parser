@@ -68,12 +68,8 @@ const bool JsonList::search(const String &key) const
 bool JsonList::contains(const String &value) const
 {
     for (size_t i = 0; i < val.size(); ++i)
-    {
         if (val[i]->contains(value))
-        {
             return true;
-        }
-    }
     return false;
 }
 
@@ -88,7 +84,6 @@ void JsonList::create(const String &_path, const String &new_value, int depth)
     {
         std::cerr << "JSON::CREATE::Invalid path.\n";
     }
-    int size = val.size();
 
     if (depth == tokens.size() - 1)
     {
@@ -125,8 +120,6 @@ void JsonList::erase(const String &_path, int depth)
         elem->erase(_path, ++depth);
     }
 }
-
-const JsonType JsonList::get_type() const { return JsonType::List; }
 
 Json *JsonList::clone() const
 {

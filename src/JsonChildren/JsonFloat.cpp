@@ -16,8 +16,6 @@ Json *JsonFloat::clone() const
     return new JsonFloat(val);
 }
 
-const JsonType JsonFloat::get_type() const { return JsonType::Floating; }
-
 void JsonFloat::log() const
 {
     std::cout << this->get_as_str();
