@@ -124,6 +124,11 @@ public:
 	 */
 	size_t first_index_of(const char &value) const;
 
+	/**
+	 * @brief Checks if the string is empty.
+	 * @return Returns true if the string is empty, false otherwise.
+	 *
+	 */
 	bool empty() const;
 
 	/**
