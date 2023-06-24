@@ -8,9 +8,14 @@ JsonNull &JsonNull::operator=(const JsonNull &rhs)
     return *this;
 }
 
-bool JsonNull::contains(const String &_value) const
+bool JsonNull::contains_recursive(const String &_value, const String &_curr_key, Vector<String> &keys) const
 {
-    return (_value == "null");
+    if (_value == "null")
+    {
+        keys.push_back(_curr_key);
+        return true;
+    }
+    return false;
 }
 
 void JsonNull::log() const

@@ -44,14 +44,26 @@ void JsonObject::log_search_results() const
     std::cout << std::flush;
 }
 
-bool JsonObject::contains(const String &_value) const
+bool JsonObject::contains_recursive(const String &_value, const String &_curr_key,
+                                    Vector<String> &keys) const
 {
     bool found = false;
     for (size_t i = 0; i < val.size(); ++i)
     {
-        if (val[i].value->contains(_value))
+        String nested_key;
+        // = _curr_key.empty() ? val[i].key : _curr_key + "/" + key;
+        if (_curr_key.empty())
         {
-            std::cout << val[i].key << '\n';
+            nested_key = val[i].key;
+        }
+        else
+        {
+            nested_key += _curr_key;
+            nested_key += "/";
+            nested_key += val[i].key;
+        }
+        if (val[i].value->contains_recursive(_value, nested_key, keys))
+        {
             found = true;
         }
     }
@@ -288,11 +300,6 @@ JsonObject::Pair &JsonObject::Pair::operator=(const JsonObject::Pair &rhs)
         delete value;
     value = rhs.value->clone();
     return *this;
-}
-
-bool JsonObject::Pair::operator==(const JsonObject::Pair &rhs)
-{
-    return false; // TODO?
 }
 
 JsonObject::Pair::~Pair() { delete value; }

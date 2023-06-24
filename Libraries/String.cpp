@@ -217,6 +217,11 @@ size_t String::last_index_of(const char &value) const
 	return 0;
 }
 
+bool String::empty() const
+{
+	return m_size == 0;
+}
+
 String String::substr(const size_t pos, const size_t len) const
 {
 	if (pos >= m_size || pos + len >= m_size)

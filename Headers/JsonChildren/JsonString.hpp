@@ -23,8 +23,6 @@ public:
   JsonString(const JsonString &rhs);
   JsonString &operator=(const JsonString &rhs);
 
-  bool contains(const String &_value) const override;
-
   /**
     @brief
       Clone method.
@@ -41,6 +39,8 @@ public:
       Returns the current string.
   */
   String get_as_str() const override;
+
+  bool contains_recursive(const String &_value, const String &_curr_key, Vector<String> &keys) const override;
 
   /**
     @brief

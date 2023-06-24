@@ -66,10 +66,9 @@ void Interface::update_interface()
     {
         if (tokens.size() > 1)
         {
-            if (!current->contains(tokens[1]))
-                std::cout << "No results!";
-            else
-                current->log_contains_results();
+            Vector<String> matches = current->contains(tokens[1]);
+            for (auto &i : matches)
+                std::cout << i << '\n';
         }
     }
     else if (command == "create" && loaded_file)

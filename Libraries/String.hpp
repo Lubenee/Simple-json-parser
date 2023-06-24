@@ -124,6 +124,8 @@ public:
 	 */
 	size_t first_index_of(const char &value) const;
 
+	bool empty() const;
+
 	/**
 	 * @brief Returns a newly constructed string object with its value initialized to a copy of a substring of this object.
 	 *

@@ -16,9 +16,14 @@ Json *JsonString::clone() const
     return new JsonString(val);
 }
 
-bool JsonString::contains(const String &_value) const
+bool JsonString::contains_recursive(const String &_value, const String &_curr_key, Vector<String> &keys) const
 {
-    return val.includes(_value);
+    if (val.includes(_value))
+    {
+        keys.push_back(_curr_key);
+        return true;
+    }
+    return false;
 }
 
 void JsonString::log() const

@@ -22,7 +22,6 @@ public:
         Pair(const Json *_value, const String &_key);
         Pair(const Pair &_rhs);
         Pair &operator=(const Pair &rhs);
-        bool operator==(const Pair &rhs);
 
         ~Pair();
     };
@@ -57,8 +56,6 @@ public:
      * @return false    No elementsare found.
      */
     const bool search(const String &key) const override;
-
-    bool contains(const String &_value) const override;
 
     /**
      * @brief This method attempts to create a new JSON element located at the specified path.
@@ -122,6 +119,9 @@ public:
     bool log_space() const override { return true; }
 
     ~JsonObject();
+
+protected:
+    bool contains_recursive(const String &_value, const String &_curr_key, Vector<String> &keys) const override;
 
 private:
     Vector<Pair> val;

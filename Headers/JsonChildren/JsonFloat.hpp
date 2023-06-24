@@ -39,7 +39,7 @@ public:
             Returns the current float value as a string.
     */
     String get_as_str() const override;
-    bool contains(const String &_value) const override;
+    bool contains_recursive(const String &_value, const String &_curr_key, Vector<String> &keys) const override;
 
     ~JsonFloat() = default;
 

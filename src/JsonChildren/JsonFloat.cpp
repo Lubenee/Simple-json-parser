@@ -21,7 +21,7 @@ void JsonFloat::log() const
     std::cout << this->get_as_str();
 }
 
-bool JsonFloat::contains(const String &_value) const
+bool JsonFloat::contains_recursive(const String &_value, const String &_curr_key, Vector<String> &keys) const
 {
     float _val = 0.0f;
     try
@@ -32,7 +32,12 @@ bool JsonFloat::contains(const String &_value) const
     {
         return false;
     }
-    return (_val == val);
+    if (_val == val)
+    {
+        keys.push_back(_curr_key);
+        return true;
+    }
+    return false;
 }
 
 String JsonFloat::get_as_str() const

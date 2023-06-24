@@ -12,7 +12,7 @@ Json *ListCreator::create_json(const String &val) const
     }
     catch (...)
     {
-        std::cout << "parse unsuccessfull.\n"; // todo
+        std::cout << "parse unsuccessfull.\n";
     }
     return nullptr;
 }

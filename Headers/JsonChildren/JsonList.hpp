@@ -32,7 +32,6 @@ public:
             and searches for the key in them instead.
     */
     const bool search(const String &key) const override;
-    bool contains(const String &value) const override;
 
     /**
      *   @brief
@@ -50,6 +49,7 @@ public:
      *      Returns the list's value as a String.
      */
     String get_as_str() const override;
+    bool contains_recursive(const String &_value, const String &_curr_key, Vector<String> &keys) const override;
 
     /**
         @brief

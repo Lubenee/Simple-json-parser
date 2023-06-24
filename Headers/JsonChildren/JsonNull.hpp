@@ -13,8 +13,6 @@ public:
     JsonNull();
     JsonNull &operator=(const JsonNull &rhs);
 
-    bool contains(const String &_value) const override;
-
     /**
         @brief
         Logs "Null".
@@ -31,6 +29,8 @@ public:
             Clone method.
     */
     Json *clone() const override;
+
+    bool contains_recursive(const String &_value, const String &_curr_key, Vector<String> &keys) const override;
 
     ~JsonNull() = default;
 };

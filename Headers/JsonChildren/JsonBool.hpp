@@ -46,7 +46,7 @@ public:
             Returns the boolean value as a string.
     */
     String get_as_str() const override;
-    virtual bool contains(const String &_value) const override;
+    bool contains_recursive(const String &_value, const String &_curr_key, Vector<String> &keys) const override;
 
     ~JsonBool() = default;
 

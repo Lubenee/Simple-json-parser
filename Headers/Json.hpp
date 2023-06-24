@@ -61,7 +61,20 @@ public:
         \retval FALSE No element includes the passed key.
     */
     virtual const bool search(const String &key) const;
-    virtual bool contains(const String &_value) const = 0;
+
+    /**
+     * @brief Checks if the JSON structure contains a specific value and retrieves the keys leading to that value.
+     *
+     * This method recursively traverses the JSON structure and searches for a specific value. It returns a vector
+     * containing the keys that lead to the found value. The keys are represented as strings, where each key represents
+     * a path within the JSON structure.
+     *
+     * @param value The value to search for within the JSON structure.
+     * @return A vector of strings representing the keys leading to the found value. If the value is not found, an empty
+     *         vector is returned.
+     *
+     */
+    Vector<String> contains(const String &_value) const;
     /**
         @brief
             Creates a new Json element on the specified path, with the specified value.
@@ -116,6 +129,9 @@ public:
     */
 
     virtual bool log_space() const { return false; }
+
+public:
+    virtual bool contains_recursive(const String &_value, const String &_curr_key, Vector<String> &keys) const = 0;
 
 protected:
     static size_t format_spaces;

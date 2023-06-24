@@ -65,10 +65,10 @@ const bool JsonList::search(const String &key) const
     return true;
 }
 
-bool JsonList::contains(const String &value) const
+bool JsonList::contains_recursive(const String &value, const String &_curr_key, Vector<String> &keys) const
 {
     for (size_t i = 0; i < val.size(); ++i)
-        if (val[i]->contains(value))
+        if (val[i]->contains_recursive(value, _curr_key, keys))
             return true;
     return false;
 }

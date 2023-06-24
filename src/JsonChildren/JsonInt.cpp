@@ -21,7 +21,7 @@ void JsonInt::log() const
     std::cout << this->get_as_str();
 }
 
-bool JsonInt::contains(const String &_value) const
+bool JsonInt::contains_recursive(const String &_value, const String &_curr_key, Vector<String> &keys) const
 {
     int _val = 0;
     try
@@ -32,7 +32,12 @@ bool JsonInt::contains(const String &_value) const
     {
         return false;
     }
-    return _val == val;
+    if (_val == val)
+    {
+        keys.push_back(_curr_key);
+        return true;
+    }
+    return false;
 }
 
 String JsonInt::get_as_str() const
