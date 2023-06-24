@@ -34,14 +34,15 @@ void Interface::update_interface()
         std::cerr << e.what() << '\n';
     }
 
-    if (command == "parse")
+    if (command == "parse" && loaded_file)
     {
         if (open_file(filename))
             current->log();
     }
-    else if (command == "log")
+    else if (command == "log" && loaded_file)
     {
-        current->log();
+        if (current)
+            current->log();
     }
     else if (command == "open")
     {
@@ -49,7 +50,7 @@ void Interface::update_interface()
             if (open_file(tokens[1]))
                 std::cout << "Done!";
     }
-    else if (command == "search")
+    else if (command == "search" && loaded_file)
     {
         if (tokens.size() > 1)
         {
@@ -61,7 +62,7 @@ void Interface::update_interface()
         else
             std::cout << "Invalid or missing key.";
     }
-    else if (command == "contains")
+    else if (command == "contains" && loaded_file)
     {
         if (tokens.size() > 1)
         {
@@ -71,28 +72,28 @@ void Interface::update_interface()
                 current->log_contains_results();
         }
     }
-    else if (command == "create")
+    else if (command == "create" && loaded_file)
     {
         if (tokens.size() > 2)
             current->create(tokens[1], tokens[2]);
         else
             std::cerr << "Invalid path or value.";
     }
-    else if (command == "set")
+    else if (command == "set" && loaded_file)
     {
         if (tokens.size() > 2)
             current->set(tokens[1], tokens[2]);
         else
             std::cerr << "Invalid path or value.";
     }
-    else if (command == "erase" || command == "delete")
+    else if ((command == "erase" || command == "delete") && loaded_file)
     {
         if (tokens.size() > 1)
             current->erase(tokens[1]);
         else
             std::cerr << "Invalid path.";
     }
-    else if (command == "move")
+    else if (command == "move" && loaded_file)
     {
         if (tokens.size() > 2)
             current->move(tokens[1], tokens[2]);
@@ -104,7 +105,7 @@ void Interface::update_interface()
         else
             std::cerr << "Invalid path(s).";
     }
-    else if (command == "saveas")
+    else if (command == "saveas" && loaded_file)
     {
         if (tokens.size() > 2)
         {
@@ -116,7 +117,7 @@ void Interface::update_interface()
             std::cerr << "Invalid path or filename.";
         }
     }
-    else if (command == "save")
+    else if (command == "save" && loaded_file)
     {
         save();
         std::cout << "Saving..";
@@ -199,6 +200,7 @@ void Interface::log_main_menu() const
                   << "'Create' -> 'Path' -> 'Value' To create a new element on the given path.\n"
                   << "'Set' -> 'Path' -> 'Value' To change an existing's key value.\n"
                   << "'Delete' -> 'Path' To delete the specified key.\n"
+                  << "'Save' To save current document.\n"
                   << "'Move' -> 'Path From' -> 'Path To' To move key from_to.\n" // TODO
                   << "'Saveas' -> 'Path' -> 'Filename' To save current file to a new location.\n"
                   << std::flush;

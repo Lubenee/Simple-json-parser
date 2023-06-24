@@ -8,13 +8,23 @@
 
 #define Quote "\""
 
+/**
+ * @brief Base class for all JSON Operations.
+ */
 class Json
 {
 
 public:
+    /**
+     * @brief Construct a new Json object
+     */
     Json() = default;
+    /**
+     * @brief Construct a new Json object
+     * Default copy constructor.
+     * @param rhs
+     */
     Json(const Json &rhs) = default;
-
     /**
         @brief
             Parses the current json element into a string and logs it.

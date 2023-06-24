@@ -7,6 +7,9 @@ template <typename Type>
 class Vector
 {
 public:
+	/**
+	 * @brief Iterator for the Vector class.
+	 */
 	class Iterator
 	{
 	public:
