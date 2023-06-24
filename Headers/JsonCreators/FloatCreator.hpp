@@ -3,6 +3,7 @@
 
 #include "JsonCreator.hpp"
 #include "JsonFloat.hpp"
+#include <cstdlib>
 
 class FloatCreator : public JsonCreator
 {

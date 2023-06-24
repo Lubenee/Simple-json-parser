@@ -3,6 +3,11 @@
 
 #include "Json.hpp"
 
+/**
+    @brief
+        Publicly inherits the Json class.
+        Holds integer values.
+*/
 class JsonInt : public Json
 {
 public:

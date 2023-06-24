@@ -1,3 +1,15 @@
 {
-  "L": "l"
+    "Key4" : {
+        "topchaci" : {
+            "s0" : 0,
+            "s1" : 1,
+            "s2" : 2
+        }, 
+        "string" : "str",
+        "bool" : true,
+        "bool2" : false,
+        "nullean" : null,
+        "float" : 123.234,
+        "List" : [1, true, false, "string", 23.432]
+    }
 }

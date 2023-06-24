@@ -10,12 +10,12 @@ class Interface
 {
 public:
     /**
-     * @brief Construct a new Interface object
+     * @brief Construct a new Interface object.
      *  Initializes the interface with an empty json object and an invalid filename.
      */
     Interface();
     /**
-     * @brief Construct a new Interface object
+     * @brief Construct a new Interface object.
      *  Initializes the interface with a filename, and if the file is found, tries to parse it.
      * @param _filename Which file to be parsed.
      */

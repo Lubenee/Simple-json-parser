@@ -200,7 +200,7 @@ void Interface::log_main_menu() const
                   << "'Set' -> 'Path' -> 'Value' To change an existing's key value.\n"
                   << "'Delete' -> 'Path' To delete the specified key.\n"
                   << "'Save' To save current document.\n"
-                  << "'Move' -> 'Path From' -> 'Path To' To move key from_to.\n" // TODO
+                  << "'Move' -> 'Path From' -> 'Path To' To move key from_to.\n"
                   << "'Saveas' -> 'Path' -> 'Filename' To save current file to a new location.\n"
                   << std::flush;
     std::cout << "--------------------------------------------------------------------------\n";

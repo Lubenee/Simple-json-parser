@@ -14,6 +14,10 @@ bool FloatCreator::get_val(const String &_obj) const
 
 bool FloatCreator::is_float(const String &val) const
 {
+    if (!val.includes('.'))
+    {
+        return false;
+    }
     for (size_t i = 0; i < val.length(); ++i)
         if (!isdigit(val[i]) && val[i] != '-' && val[i] != '+' && val[i] != '.')
             return false;

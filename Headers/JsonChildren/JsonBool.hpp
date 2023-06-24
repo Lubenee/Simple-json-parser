@@ -6,6 +6,7 @@
 /**
     @brief
         Publicly inherits the Json class.
+        Holds boolean values.
 */
 class JsonBool : public Json
 {

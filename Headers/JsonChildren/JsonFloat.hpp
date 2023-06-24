@@ -4,6 +4,11 @@
 #include "Json.hpp"
 #include <string.h>
 
+/**
+    @brief
+        Publicly inherits the Json class.
+        Holds floating values.
+*/
 class JsonFloat : public Json
 {
 public:

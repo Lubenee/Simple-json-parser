@@ -3,6 +3,11 @@
 
 #include "Json.hpp"
 
+/**
+    @brief
+        Publicly inherits the Json class.
+        Holds pairs of Key-value Json Elements.
+*/
 class JsonObject : public Json
 {
 public:

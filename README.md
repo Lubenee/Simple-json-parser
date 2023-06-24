@@ -8,3 +8,5 @@
 *      -Generate the build files using Cmake.
 *      -BUild the project.
 *      -After a successful build, run the generated executable (named 'Json' by default).
+*
+* Compiled on GCC 13.1.0 x86_64-w64-mingw32

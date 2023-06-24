@@ -3,6 +3,11 @@
 
 #include "Json.hpp"
 
+/**
+    @brief
+        Publicly inherits the Json class.
+        Holds the null value.
+*/
 class JsonNull : public Json
 {
 public:
