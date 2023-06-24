@@ -1,0 +1,35 @@
+\doxysection{Json\+Bool.\+hpp}
+\hypertarget{_json_bool_8hpp_source}{}\label{_json_bool_8hpp_source}\index{Headers/JsonChildren/JsonBool.hpp@{Headers/JsonChildren/JsonBool.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#if\ !defined(JSON\_BOOL\_H)}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ JSON\_BOOL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Json.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_json_bool}{JsonBool}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_json}{Json}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_json_bool_ae69cdae72288e5a4c8e69afe9ff8ddcb}{JsonBool}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_json_bool_ae69cdae72288e5a4c8e69afe9ff8ddcb}{JsonBool}}(\textcolor{keywordtype}{bool}\ \_val);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_json_bool_ae69cdae72288e5a4c8e69afe9ff8ddcb}{JsonBool}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_json_bool}{JsonBool}}\ \&rhs);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_json_bool}{JsonBool}}\ \&operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_json_bool}{JsonBool}}\ \&rhs);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_json}{Json}}\ *\mbox{\hyperlink{class_json_bool_aad7f75f2ab7ca38ccdbf316b7b350848}{clone}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_json_bool_ad81a016e3d3059d94e2eff03012c6ad2}{log}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_string}{String}}\ \mbox{\hyperlink{class_json_bool_afdf1d7c4b0b6b6a1e7a5e5abadf7e751}{get\_as\_str}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ contains\_recursive(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_value,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_curr\_key,\ \mbox{\hyperlink{class_vector}{Vector<String>}}\ \&keys)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_json_bool}{\string~JsonBool}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ val;}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ JSON\_BOOL\_H}}
+
+\end{DoxyCode}

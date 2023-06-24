@@ -1,0 +1,95 @@
+\doxysection{Float\+Creator Class Reference}
+\hypertarget{class_float_creator}{}\label{class_float_creator}\index{FloatCreator@{FloatCreator}}
+Inheritance diagram for Float\+Creator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_float_creator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_float_creator_ac500eda63b49ba4a40c9b71e8a9be73d}{Float\+Creator}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Float Creator object. This constructor initializes the \doxylink{class_json_creator}{Json\+Creator}\textquotesingle{}s constructor with \"{}\+Float\"{} name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_json}{Json}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_float_creator_a84423ecacf824c6eae41d0d7fb5d3b2e}{create\+\_\+json}} (const \mbox{\hyperlink{class_string}{String}} \&val) const override
+\begin{DoxyCompactList}\small\item\em Create a json object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_float_creator_a2bc45714fc1ea4ebdbf659061b4efad0}{get\+\_\+val}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+obj) const override
+\begin{DoxyCompactList}\small\item\em Get the val object Returns true if \+\_\+obj is a valid float value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_json_creator}{Json\+Creator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_json_creator_ab696b6a3f4392deb45aaa2f34e799a0e}{Json\+Creator}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+val)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_json}{Json} Creator object. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_json_creator_a9641ff88cbd5debb81d9dc6a1eca0d0d}{get\+\_\+val}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+obj) const =0
+\begin{DoxyCompactList}\small\item\em Get the val object. The child creators attempt to recognize what command is in the \+\_\+obj string. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_json}{Json}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_json_creator_a6570e62ba090a3fa2bb2be9f79b6ffad}{create\+\_\+json}} (const \mbox{\hyperlink{class_string}{String}} \&val) const =0
+\begin{DoxyCompactList}\small\item\em Attempt to create a new json object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_json_creator}{Json\+Creator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_string}{String}} {\bfseries val}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_float_creator_ac500eda63b49ba4a40c9b71e8a9be73d}\label{class_float_creator_ac500eda63b49ba4a40c9b71e8a9be73d} 
+\index{FloatCreator@{FloatCreator}!FloatCreator@{FloatCreator}}
+\index{FloatCreator@{FloatCreator}!FloatCreator@{FloatCreator}}
+\doxysubsubsection{\texorpdfstring{FloatCreator()}{FloatCreator()}}
+{\footnotesize\ttfamily Float\+Creator\+::\+Float\+Creator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Float Creator object. This constructor initializes the \doxylink{class_json_creator}{Json\+Creator}\textquotesingle{}s constructor with \"{}\+Float\"{} name. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_float_creator_a84423ecacf824c6eae41d0d7fb5d3b2e}\label{class_float_creator_a84423ecacf824c6eae41d0d7fb5d3b2e} 
+\index{FloatCreator@{FloatCreator}!create\_json@{create\_json}}
+\index{create\_json@{create\_json}!FloatCreator@{FloatCreator}}
+\doxysubsubsection{\texorpdfstring{create\_json()}{create\_json()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_json}{Json}} \texorpdfstring{$\ast$}{*} Float\+Creator\+::create\+\_\+json (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Create a json object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Json\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_json_creator_a6570e62ba090a3fa2bb2be9f79b6ffad}{Json\+Creator}}.
+
+\Hypertarget{class_float_creator_a2bc45714fc1ea4ebdbf659061b4efad0}\label{class_float_creator_a2bc45714fc1ea4ebdbf659061b4efad0} 
+\index{FloatCreator@{FloatCreator}!get\_val@{get\_val}}
+\index{get\_val@{get\_val}!FloatCreator@{FloatCreator}}
+\doxysubsubsection{\texorpdfstring{get\_val()}{get\_val()}}
+{\footnotesize\ttfamily bool Float\+Creator\+::get\+\_\+val (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the val object Returns true if \+\_\+obj is a valid float value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+obj} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_json_creator_a9641ff88cbd5debb81d9dc6a1eca0d0d}{Json\+Creator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Headers/\+Json\+Creators/Float\+Creator.\+hpp\item 
+src/\+Json\+Creators/Float\+Creator.\+cpp\end{DoxyCompactItemize}

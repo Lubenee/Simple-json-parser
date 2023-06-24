@@ -1,0 +1,346 @@
+\doxysection{Json\+Object Class Reference}
+\hypertarget{class_json_object}{}\label{class_json_object}\index{JsonObject@{JsonObject}}
+
+
+Publicly inherits the \doxylink{class_json}{Json} class. Holds pairs of Key-\/value \doxylink{class_json}{Json} Elements.  
+
+
+
+
+{\ttfamily \#include $<$Json\+Object.\+hpp$>$}
+
+Inheritance diagram for Json\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_json_object}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_json_object_1_1_pair}{Pair}}
+\begin{DoxyCompactList}\small\item\em This struct holds the object\textquotesingle{}s values as Key-\/value pairs. It takes care of it\textquotesingle{}s own data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_json_object_aa41d053fc27e4fcf4f1c6f55ef28f4a9}{Json\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_json}{Json} Object object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_json_object_a100dc43e7b80fddb69172e20e5f8249a}{Json\+Object}} (const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{struct_json_object_1_1_pair}{Pair}} $>$ \&\+\_\+val)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_json}{Json} Object object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_json_object_ae73160f77eda4c46b170dded5c18deb1}{Json\+Object}} (const \mbox{\hyperlink{class_json_object}{Json\+Object}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_json}{Json} Object object Default copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_json_object_aad73e021c4b7768e4741ee66d78519ec}\label{class_json_object_aad73e021c4b7768e4741ee66d78519ec} 
+\mbox{\hyperlink{class_json_object}{Json\+Object}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_json_object}{Json\+Object}} \&rhs)
+\item 
+const bool \mbox{\hyperlink{class_json_object_ac3c9ebcf2048bd497394a92dca582d11}{search}} (const \mbox{\hyperlink{class_string}{String}} \&key) const override
+\begin{DoxyCompactList}\small\item\em Searches the object for the passed key, and any element that matches it is stored in the search\+\_\+matches \doxylink{class_vector}{Vector}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_json_object_ac3ba733ecf50b91a9b607a57466fc5bc}{create}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+path, const \mbox{\hyperlink{class_string}{String}} \&new\+\_\+value, int depth=0) override
+\begin{DoxyCompactList}\small\item\em This method attempts to create a new JSON element located at the specified path. The path\textquotesingle{}s last token is the new element\textquotesingle{}s key. If the passed value is not valid JSON format, the object\textquotesingle{}s state remains unchanged. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_json_object_a976fbc81468d7ea67511db1c3cff70fb}{set}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+path, const \mbox{\hyperlink{class_string}{String}} \&new\+\_\+value, int depth=0) override
+\begin{DoxyCompactList}\small\item\em This method attempts to change an existing element\textquotesingle{}s value to the passed new value. If no such element exists, the object\textquotesingle{}s state remains unchanged. If the passed value is not valid JSON format, the object\textquotesingle{}s state remains unchanged. An appropriate message is displayed. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_json_object_a3a65939a05dfc3a318e5f01548a7cce5}{erase}} (const \mbox{\hyperlink{class_string}{String}} \&path, int depth=0) override
+\begin{DoxyCompactList}\small\item\em This method attempts to erase the element from the passed path. If no such element is found, the object\textquotesingle{}s state remains unchanged. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_json_object_a72a1059b02cfa74a5bd902993c9da80b}{move}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+from, \mbox{\hyperlink{class_string}{String}} \&\+\_\+to, int depth=0) override
+\begin{DoxyCompactList}\small\item\em This method attempts to move the element from the first path to the second. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_json}{Json}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_json_object_ac5e0cc7506c143ccd108c04ea4d8d093}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clone Method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_json_object_aac33a92da38e7445f08a8a745a8e24d2}{log}} () const override
+\begin{DoxyCompactList}\small\item\em Logs the Object\textquotesingle{}s elements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_json_object_a6dbdad32ff1ff6be409beaec88a300b2}{log\+\_\+search\+\_\+results}} () const override
+\begin{DoxyCompactList}\small\item\em Logs the elements from the last time the user searched for a key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_string}{String}} \mbox{\hyperlink{class_json_object_a72b48c705993ea82f8bbddb0290f587d}{get\+\_\+as\+\_\+str}} () const override
+\begin{DoxyCompactList}\small\item\em Get the object formatted as a string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_json_object_a383fee876d334ffb1d4dcdf9f106379d}{log\+\_\+space}} () const override
+\begin{DoxyCompactList}\small\item\em Used for formatting elements when logging them or saving them to files. This method is to be redifined by all children who leave a new line when they are done \textquotesingle{}logging\textquotesingle{} themselves. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_json}{Json}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Json} ()=default
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_json}{Json} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_json_a3a78c4c91c6c9db9d546176612da2064}{Json}} (const \mbox{\hyperlink{class_json}{Json}} \&rhs)=default
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_json}{Json} object Default copy constructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_json_a57354610e6e2c1ceef1e4bb3859b8296}{log}} () const =0
+\begin{DoxyCompactList}\small\item\em Parses the current json element into a string and logs it. Pure virtual method. Each child must redefine for it\textquotesingle{}s own type. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_string}{String}} \mbox{\hyperlink{class_json_a7f00bb53850b78552a39608112f0a8b7}{get\+\_\+as\+\_\+str}} () const =0
+\begin{DoxyCompactList}\small\item\em Returns a new string containing the element\textquotesingle{}s value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_json}{Json}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_json_a3c294744e4e13e900db410b6994b4513}{clone}} () const =0
+\begin{DoxyCompactList}\small\item\em Clone method. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_json_a4466d1d4f6de13898a9abf1639ddbc37}{log\+\_\+search\+\_\+results}} () const
+\begin{DoxyCompactList}\small\item\em This method logs all the elements that were found after using the search method. If nothing is found, it does nothing. \end{DoxyCompactList}\item 
+virtual void {\bfseries log\+\_\+contains\+\_\+results} () const
+\item 
+virtual const bool \mbox{\hyperlink{class_json_abecbf16ac83bcaf269b57d35d925932f}{search}} (const \mbox{\hyperlink{class_string}{String}} \&key) const
+\begin{DoxyCompactList}\small\item\em Allows the user to search for an element, whose key corresponds to the passed value. Only the List and Object children are required to predefine this method, since only they hold element keys. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_string}{String}} $>$ \mbox{\hyperlink{class_json_aa233bb447a8a1f90e887125a51187ee2}{contains}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+value) const
+\begin{DoxyCompactList}\small\item\em Checks if the JSON structure contains a specific value and retrieves the keys leading to that value. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_json_ad09574ca866335dc65e916ed641aabac}{create}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+path, const \mbox{\hyperlink{class_string}{String}} \&new\+\_\+value, int depth=0)
+\begin{DoxyCompactList}\small\item\em Creates a new \doxylink{class_json}{Json} element on the specified path, with the specified value. If the path is invalid, the JSON state remains unchanged. The depth parameter is not to be used. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_json_af0da770d6e6911e003d0492e837d37c9}{set}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+path, const \mbox{\hyperlink{class_string}{String}} \&new\+\_\+value, int depth=0)
+\begin{DoxyCompactList}\small\item\em Replaces an existing element\textquotesingle{}s value with the new value passed. If the path is invalid, the JSON state remains unchanged. The depth parameter is not to be used. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_json_a11a4a284faae1e89fbc0f82b4c681df2}{erase}} (const \mbox{\hyperlink{class_string}{String}} \&path, int depth=0)
+\begin{DoxyCompactList}\small\item\em Erases the last key that is given in the path variable. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_json_ae5da37004e4e96ac117d6a9f845b9797}{move}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+from, \mbox{\hyperlink{class_string}{String}} \&\+\_\+to, int depth=0)
+\begin{DoxyCompactList}\small\item\em Moves the element from the first path to the second one. The element at the first path is deleted. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_json_ada03220fb7cdf6c765413b3c50d3cccb}{log\+\_\+space}} () const
+\begin{DoxyCompactList}\small\item\em Used for formatting elements when logging them or saving them to files. This method is to be redifined by all children who leave a new line when they are done \textquotesingle{}logging\textquotesingle{} themselves. \end{DoxyCompactList}\item 
+virtual bool {\bfseries contains\+\_\+recursive} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+value, const \mbox{\hyperlink{class_string}{String}} \&\+\_\+curr\+\_\+key, \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_string}{String}} $>$ \&keys) const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_json_object_af97e5cbbcb196825947d29b0053838f5}{contains\+\_\+recursive}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+value, const \mbox{\hyperlink{class_string}{String}} \&\+\_\+curr\+\_\+key, \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_string}{String}} $>$ \&keys) const override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_json}{Json}}}
+\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+t {\bfseries format\+\_\+spaces} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Publicly inherits the \doxylink{class_json}{Json} class. Holds pairs of Key-\/value \doxylink{class_json}{Json} Elements. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_json_object_aa41d053fc27e4fcf4f1c6f55ef28f4a9}\label{class_json_object_aa41d053fc27e4fcf4f1c6f55ef28f4a9} 
+\index{JsonObject@{JsonObject}!JsonObject@{JsonObject}}
+\index{JsonObject@{JsonObject}!JsonObject@{JsonObject}}
+\doxysubsubsection{\texorpdfstring{JsonObject()}{JsonObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Json\+Object\+::\+Json\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_json}{Json} Object object. 
+
+\Hypertarget{class_json_object_a100dc43e7b80fddb69172e20e5f8249a}\label{class_json_object_a100dc43e7b80fddb69172e20e5f8249a} 
+\index{JsonObject@{JsonObject}!JsonObject@{JsonObject}}
+\index{JsonObject@{JsonObject}!JsonObject@{JsonObject}}
+\doxysubsubsection{\texorpdfstring{JsonObject()}{JsonObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Json\+Object\+::\+Json\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{struct_json_object_1_1_pair}{Pair}} $>$ \&}]{\+\_\+val }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_json}{Json} Object object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+val} & A \doxylink{class_vector}{Vector}, which contains the Object\textquotesingle{}s elements. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_json_object_ae73160f77eda4c46b170dded5c18deb1}\label{class_json_object_ae73160f77eda4c46b170dded5c18deb1} 
+\index{JsonObject@{JsonObject}!JsonObject@{JsonObject}}
+\index{JsonObject@{JsonObject}!JsonObject@{JsonObject}}
+\doxysubsubsection{\texorpdfstring{JsonObject()}{JsonObject()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Json\+Object\+::\+Json\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_json_object}{Json\+Object}} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_json}{Json} Object object Default copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_json_object_ac5e0cc7506c143ccd108c04ea4d8d093}\label{class_json_object_ac5e0cc7506c143ccd108c04ea4d8d093} 
+\index{JsonObject@{JsonObject}!clone@{clone}}
+\index{clone@{clone}!JsonObject@{JsonObject}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_json}{Json}} \texorpdfstring{$\ast$}{*} Json\+Object\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone Method. 
+
+
+
+Implements \mbox{\hyperlink{class_json_a3c294744e4e13e900db410b6994b4513}{Json}}.
+
+\Hypertarget{class_json_object_af97e5cbbcb196825947d29b0053838f5}\label{class_json_object_af97e5cbbcb196825947d29b0053838f5} 
+\index{JsonObject@{JsonObject}!contains\_recursive@{contains\_recursive}}
+\index{contains\_recursive@{contains\_recursive}!JsonObject@{JsonObject}}
+\doxysubsubsection{\texorpdfstring{contains\_recursive()}{contains\_recursive()}}
+{\footnotesize\ttfamily bool Json\+Object\+::contains\+\_\+recursive (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{\+\_\+value,  }\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{\+\_\+curr\+\_\+key,  }\item[{\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_string}{String}} $>$ \&}]{keys }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_json}{Json}}.
+
+\Hypertarget{class_json_object_ac3ba733ecf50b91a9b607a57466fc5bc}\label{class_json_object_ac3ba733ecf50b91a9b607a57466fc5bc} 
+\index{JsonObject@{JsonObject}!create@{create}}
+\index{create@{create}!JsonObject@{JsonObject}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily void Json\+Object\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{\+\_\+path,  }\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{new\+\_\+value,  }\item[{int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+This method attempts to create a new JSON element located at the specified path. The path\textquotesingle{}s last token is the new element\textquotesingle{}s key. If the passed value is not valid JSON format, the object\textquotesingle{}s state remains unchanged. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+path} & Path. \\
+\hline
+{\em new\+\_\+value} & Valid JSON value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_json_ad09574ca866335dc65e916ed641aabac}{Json}}.
+
+\Hypertarget{class_json_object_a3a65939a05dfc3a318e5f01548a7cce5}\label{class_json_object_a3a65939a05dfc3a318e5f01548a7cce5} 
+\index{JsonObject@{JsonObject}!erase@{erase}}
+\index{erase@{erase}!JsonObject@{JsonObject}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily void Json\+Object\+::erase (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{path,  }\item[{int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+This method attempts to erase the element from the passed path. If no such element is found, the object\textquotesingle{}s state remains unchanged. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_json_a11a4a284faae1e89fbc0f82b4c681df2}{Json}}.
+
+\Hypertarget{class_json_object_a72b48c705993ea82f8bbddb0290f587d}\label{class_json_object_a72b48c705993ea82f8bbddb0290f587d} 
+\index{JsonObject@{JsonObject}!get\_as\_str@{get\_as\_str}}
+\index{get\_as\_str@{get\_as\_str}!JsonObject@{JsonObject}}
+\doxysubsubsection{\texorpdfstring{get\_as\_str()}{get\_as\_str()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_string}{String}} Json\+Object\+::get\+\_\+as\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the object formatted as a string. 
+
+
+
+Implements \mbox{\hyperlink{class_json_a7f00bb53850b78552a39608112f0a8b7}{Json}}.
+
+\Hypertarget{class_json_object_aac33a92da38e7445f08a8a745a8e24d2}\label{class_json_object_aac33a92da38e7445f08a8a745a8e24d2} 
+\index{JsonObject@{JsonObject}!log@{log}}
+\index{log@{log}!JsonObject@{JsonObject}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily void Json\+Object\+::log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Logs the Object\textquotesingle{}s elements. 
+
+
+
+Implements \mbox{\hyperlink{class_json_a57354610e6e2c1ceef1e4bb3859b8296}{Json}}.
+
+\Hypertarget{class_json_object_a6dbdad32ff1ff6be409beaec88a300b2}\label{class_json_object_a6dbdad32ff1ff6be409beaec88a300b2} 
+\index{JsonObject@{JsonObject}!log\_search\_results@{log\_search\_results}}
+\index{log\_search\_results@{log\_search\_results}!JsonObject@{JsonObject}}
+\doxysubsubsection{\texorpdfstring{log\_search\_results()}{log\_search\_results()}}
+{\footnotesize\ttfamily void Json\+Object\+::log\+\_\+search\+\_\+results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Logs the elements from the last time the user searched for a key. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_json_a4466d1d4f6de13898a9abf1639ddbc37}{Json}}.
+
+\Hypertarget{class_json_object_a383fee876d334ffb1d4dcdf9f106379d}\label{class_json_object_a383fee876d334ffb1d4dcdf9f106379d} 
+\index{JsonObject@{JsonObject}!log\_space@{log\_space}}
+\index{log\_space@{log\_space}!JsonObject@{JsonObject}}
+\doxysubsubsection{\texorpdfstring{log\_space()}{log\_space()}}
+{\footnotesize\ttfamily bool Json\+Object\+::log\+\_\+space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Used for formatting elements when logging them or saving them to files. This method is to be redifined by all children who leave a new line when they are done \textquotesingle{}logging\textquotesingle{} themselves. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em FALSE} & Default value. \\
+\hline
+{\em TRUE} & If overriden. \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \mbox{\hyperlink{class_json_ada03220fb7cdf6c765413b3c50d3cccb}{Json}}.
+
+\Hypertarget{class_json_object_a72a1059b02cfa74a5bd902993c9da80b}\label{class_json_object_a72a1059b02cfa74a5bd902993c9da80b} 
+\index{JsonObject@{JsonObject}!move@{move}}
+\index{move@{move}!JsonObject@{JsonObject}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Json\+Object\+::move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{\+\_\+from,  }\item[{\mbox{\hyperlink{class_string}{String}} \&}]{\+\_\+to,  }\item[{int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+This method attempts to move the element from the first path to the second. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+from} & From Path. \\
+\hline
+{\em \+\_\+to} & To Path. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_json_ae5da37004e4e96ac117d6a9f845b9797}{Json}}.
+
+\Hypertarget{class_json_object_ac3c9ebcf2048bd497394a92dca582d11}\label{class_json_object_ac3c9ebcf2048bd497394a92dca582d11} 
+\index{JsonObject@{JsonObject}!search@{search}}
+\index{search@{search}!JsonObject@{JsonObject}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily const bool Json\+Object\+::search (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Searches the object for the passed key, and any element that matches it is stored in the search\+\_\+matches \doxylink{class_vector}{Vector}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & An Element\textquotesingle{}s key. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true One or more element is found. 
+
+false No elementsare found. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_json_abecbf16ac83bcaf269b57d35d925932f}{Json}}.
+
+\Hypertarget{class_json_object_a976fbc81468d7ea67511db1c3cff70fb}\label{class_json_object_a976fbc81468d7ea67511db1c3cff70fb} 
+\index{JsonObject@{JsonObject}!set@{set}}
+\index{set@{set}!JsonObject@{JsonObject}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Json\+Object\+::set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{\+\_\+path,  }\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{new\+\_\+value,  }\item[{int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+This method attempts to change an existing element\textquotesingle{}s value to the passed new value. If no such element exists, the object\textquotesingle{}s state remains unchanged. If the passed value is not valid JSON format, the object\textquotesingle{}s state remains unchanged. An appropriate message is displayed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+path} & Path. \\
+\hline
+{\em new\+\_\+value} & Valid JSON value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_json_af0da770d6e6911e003d0492e837d37c9}{Json}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Headers/\+Json\+Children/Json\+Object.\+hpp\item 
+src/\+Json\+Children/Json\+Object.\+cpp\end{DoxyCompactItemize}

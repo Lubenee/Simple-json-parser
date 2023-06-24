@@ -1,0 +1,446 @@
+\doxysection{String Class Reference}
+\hypertarget{class_string}{}\label{class_string}\index{String@{String}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_string_a8a7ef356e05eb9b1ea1ab518baee3095}\label{class_string_a8a7ef356e05eb9b1ea1ab518baee3095} 
+{\bfseries String} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_string}{String} object. The string is empty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_string_a1e8502bf227959dbc9c0b3f2c64434f4}{String}} (const char \texorpdfstring{$\ast$}{*}new\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_string}{String} object Creates a string object from a null-\/terminated C-\/style string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_string_afc158dffcdf56e601bd640cbacdfcd3c}{String}} (const \mbox{\hyperlink{class_string}{String}} \&other)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_string}{String} object Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_string_a113bff4af0d201bddca91a915db1c8c4}{String}} (\mbox{\hyperlink{class_string}{String}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_string}{String} object Move constructor. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_string_a8d485340c77fd86c2bd8f1ad2b121100}{c\+\_\+str}} () const
+\begin{DoxyCompactList}\small\item\em Returns the string as a C-\/style string. \end{DoxyCompactList}\item 
+const size\+\_\+t \mbox{\hyperlink{class_string_a7cf805781fa0cfbf7d74a568965bbd9e}{size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of characters in the string. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_string_ad3b888edbfb3bab21d4bae4663d2211a}{length}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of characters in the string. \end{DoxyCompactList}\item 
+const bool \mbox{\hyperlink{class_string_a9a44582fe12bb555cac9e20ee54c1a3c}{includes}} (const \mbox{\hyperlink{class_string}{String}} \&search\+\_\+value) const
+\begin{DoxyCompactList}\small\item\em Returns true if the string contains the passed string. \end{DoxyCompactList}\item 
+const bool \mbox{\hyperlink{class_string_a8509b0133f8d7acd71b77e972de53fa9}{includes}} (const char search\+\_\+character) const
+\begin{DoxyCompactList}\small\item\em Returns true if the string contains the passed character. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_string_a7f8ab9a8205265cd692fcdc128925625}{replace}} (const \mbox{\hyperlink{class_string}{String}} \&search\+\_\+value, const \mbox{\hyperlink{class_string}{String}} \&replace\+\_\+value)
+\begin{DoxyCompactList}\small\item\em If the current string includes the search value, it is replaced with the replace value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_string}{String}} \mbox{\hyperlink{class_string_ab10a6fa236d5abd4ca2884d2d287a7e6}{to\+\_\+upper\+\_\+case}} ()
+\begin{DoxyCompactList}\small\item\em Returns a new string in which each letter is made uppercase. Does not modify the original string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_string}{String}} \mbox{\hyperlink{class_string_aad17febaccbcdeb63ed98b093d5c7aa0}{to\+\_\+lower\+\_\+case}} ()
+\begin{DoxyCompactList}\small\item\em Returns a new string in which each letter is made lowercase. Does not modify the original string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_string_a0338569b759a5e4bc9e9e4df637a8de7}{erase}} (const int index)
+\begin{DoxyCompactList}\small\item\em Erases the letter at the passed index, if the index is valid. Else it does nothing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_string_a019ab4d3559769b2423d5bdb6e31837e}{split}} (const char split\+\_\+character, \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_string}{String}} $>$ \&returned) const
+\begin{DoxyCompactList}\small\item\em Splits the string into different tokens and pushes them into the \"{}returned\"{} \doxylink{class_vector}{Vector}. EXAMPLE\+: \"{}\+An Interesting sentence\"{}. If the split character is \textquotesingle{} \textquotesingle{}, then the \doxylink{class_vector}{Vector} will have the following elements\+: 0.\+An 1.\+Interesting 3.\+sentence. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_string_a1a32859a441a9d75732e779d0a3b1105}{last\+\_\+index\+\_\+of}} (const char \&value) const
+\begin{DoxyCompactList}\small\item\em Returns the index of the last time the passed character is seen in the string. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_string_a96f0cc3bf2f13183ac6b2221329ec0bd}{first\+\_\+index\+\_\+of}} (const char \&value) const
+\begin{DoxyCompactList}\small\item\em Returns the index of the first time the passed character is seen in the string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_string_acf604fddaddc57ee1575b34ec1c1589d}{empty}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the string is empty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_string}{String}} \mbox{\hyperlink{class_string_acd0f5a95a832c1ff8fc798b19e511b08}{substr}} (const size\+\_\+t pos, const size\+\_\+t len) const
+\begin{DoxyCompactList}\small\item\em Returns a newly constructed string object with its value initialized to a copy of a substring of this object. \end{DoxyCompactList}\item 
+const char \mbox{\hyperlink{class_string_a742049709cd63493eea84084beecb632}{at}} (const size\+\_\+t \&index) const
+\begin{DoxyCompactList}\small\item\em Returns the character at a specific index in the string. \end{DoxyCompactList}\item 
+char \& \mbox{\hyperlink{class_string_a48d8e048362a8f6c749b11a693f06ed5}{operator\mbox{[}$\,$\mbox{]}}} (const size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Returns a reference to the character at a specific index in the string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_string_a3833f844a743166a7b9ad3d762aa3e5d}{operator==}} (const \mbox{\hyperlink{class_string}{String}} \&other) const
+\begin{DoxyCompactList}\small\item\em Returns true if the strings are the same. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_string_ae78b95bd3eb92f98cbca720266661a79}{operator!=}} (const \mbox{\hyperlink{class_string}{String}} \&other) const
+\begin{DoxyCompactList}\small\item\em Returns false if the strings are the same. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_string}{String}} \& \mbox{\hyperlink{class_string_a07d6a22e524a3c13b6d21c2125bad49f}{operator+=}} (const \mbox{\hyperlink{class_string}{String}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Concatenates {\itshape this} string to the passed one. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_string}{String}} \& \mbox{\hyperlink{class_string_a734f34a0b7a42bcad30c368d6e8c5469}{operator=}} (const \mbox{\hyperlink{class_string}{String}} \&other)
+\begin{DoxyCompactList}\small\item\em Assigns a new value to the string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_string_a08e413cb1d892e51226b87a5fb64ee8c}\label{class_string_a08e413cb1d892e51226b87a5fb64ee8c} 
+static const size\+\_\+t {\bfseries npos} = static\+\_\+cast$<$size\+\_\+t$>$(-\/1)
+\begin{DoxyCompactList}\small\item\em Represents a special value typically used to indicate the absence or failure of a specific position or substring within a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_string_ae7a8c588d76ac6642455450c24015e24}\label{class_string_ae7a8c588d76ac6642455450c24015e24} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{class_string}{String}} \&string)
+\item 
+\Hypertarget{class_string_abeeb006aab86adb88dd2c40922dfb984}\label{class_string_abeeb006aab86adb88dd2c40922dfb984} 
+std\+::istream \& {\bfseries operator$>$$>$} (std\+::istream \&input, \mbox{\hyperlink{class_string}{String}} \&str)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_string_a1e8502bf227959dbc9c0b3f2c64434f4}\label{class_string_a1e8502bf227959dbc9c0b3f2c64434f4} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{new\+\_\+string }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_string}{String} object Creates a string object from a null-\/terminated C-\/style string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+string} & New string. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_string_afc158dffcdf56e601bd640cbacdfcd3c}\label{class_string_afc158dffcdf56e601bd640cbacdfcd3c} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_string}{String} object Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_string_a113bff4af0d201bddca91a915db1c8c4}\label{class_string_a113bff4af0d201bddca91a915db1c8c4} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_string}{String}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Construct a new \doxylink{class_string}{String} object Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_string_a742049709cd63493eea84084beecb632}\label{class_string_a742049709cd63493eea84084beecb632} 
+\index{String@{String}!at@{at}}
+\index{at@{at}!String@{String}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily const char String\+::at (\begin{DoxyParamCaption}\item[{const size\+\_\+t \&}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Returns the character at a specific index in the string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const char 
+\end{DoxyReturn}
+\Hypertarget{class_string_a8d485340c77fd86c2bd8f1ad2b121100}\label{class_string_a8d485340c77fd86c2bd8f1ad2b121100} 
+\index{String@{String}!c\_str@{c\_str}}
+\index{c\_str@{c\_str}!String@{String}}
+\doxysubsubsection{\texorpdfstring{c\_str()}{c\_str()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} String\+::c\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the string as a C-\/style string. 
+
+\begin{DoxyReturn}{Returns}
+const char\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+\Hypertarget{class_string_acf604fddaddc57ee1575b34ec1c1589d}\label{class_string_acf604fddaddc57ee1575b34ec1c1589d} 
+\index{String@{String}!empty@{empty}}
+\index{empty@{empty}!String@{String}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool String\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the string is empty. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if the string is empty, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_string_a0338569b759a5e4bc9e9e4df637a8de7}\label{class_string_a0338569b759a5e4bc9e9e4df637a8de7} 
+\index{String@{String}!erase@{erase}}
+\index{erase@{erase}!String@{String}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily void String\+::erase (\begin{DoxyParamCaption}\item[{const int}]{index }\end{DoxyParamCaption})}
+
+
+
+Erases the letter at the passed index, if the index is valid. Else it does nothing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_string_a96f0cc3bf2f13183ac6b2221329ec0bd}\label{class_string_a96f0cc3bf2f13183ac6b2221329ec0bd} 
+\index{String@{String}!first\_index\_of@{first\_index\_of}}
+\index{first\_index\_of@{first\_index\_of}!String@{String}}
+\doxysubsubsection{\texorpdfstring{first\_index\_of()}{first\_index\_of()}}
+{\footnotesize\ttfamily size\+\_\+t String\+::first\+\_\+index\+\_\+of (\begin{DoxyParamCaption}\item[{const char \&}]{value }\end{DoxyParamCaption}) const}
+
+
+
+Returns the index of the first time the passed character is seen in the string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_string_a8509b0133f8d7acd71b77e972de53fa9}\label{class_string_a8509b0133f8d7acd71b77e972de53fa9} 
+\index{String@{String}!includes@{includes}}
+\index{includes@{includes}!String@{String}}
+\doxysubsubsection{\texorpdfstring{includes()}{includes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const bool String\+::includes (\begin{DoxyParamCaption}\item[{const char}]{search\+\_\+character }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if the string contains the passed character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+\_\+character} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_string_a9a44582fe12bb555cac9e20ee54c1a3c}\label{class_string_a9a44582fe12bb555cac9e20ee54c1a3c} 
+\index{String@{String}!includes@{includes}}
+\index{includes@{includes}!String@{String}}
+\doxysubsubsection{\texorpdfstring{includes()}{includes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const bool String\+::includes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{search\+\_\+value }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if the string contains the passed string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+\_\+value} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_string_a1a32859a441a9d75732e779d0a3b1105}\label{class_string_a1a32859a441a9d75732e779d0a3b1105} 
+\index{String@{String}!last\_index\_of@{last\_index\_of}}
+\index{last\_index\_of@{last\_index\_of}!String@{String}}
+\doxysubsubsection{\texorpdfstring{last\_index\_of()}{last\_index\_of()}}
+{\footnotesize\ttfamily size\+\_\+t String\+::last\+\_\+index\+\_\+of (\begin{DoxyParamCaption}\item[{const char \&}]{value }\end{DoxyParamCaption}) const}
+
+
+
+Returns the index of the last time the passed character is seen in the string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_string_ad3b888edbfb3bab21d4bae4663d2211a}\label{class_string_ad3b888edbfb3bab21d4bae4663d2211a} 
+\index{String@{String}!length@{length}}
+\index{length@{length}!String@{String}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily size\+\_\+t String\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of characters in the string. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_string_ae78b95bd3eb92f98cbca720266661a79}\label{class_string_ae78b95bd3eb92f98cbca720266661a79} 
+\index{String@{String}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!String@{String}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool String\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Returns false if the strings are the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\Hypertarget{class_string_a07d6a22e524a3c13b6d21c2125bad49f}\label{class_string_a07d6a22e524a3c13b6d21c2125bad49f} 
+\index{String@{String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!String@{String}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_string}{String}} \& String\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Concatenates {\itshape this} string to the passed one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_string}{String}\& 
+\end{DoxyReturn}
+\Hypertarget{class_string_a734f34a0b7a42bcad30c368d6e8c5469}\label{class_string_a734f34a0b7a42bcad30c368d6e8c5469} 
+\index{String@{String}!operator=@{operator=}}
+\index{operator=@{operator=}!String@{String}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_string}{String}} \& String\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assigns a new value to the string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_string}{String}\& 
+\end{DoxyReturn}
+\Hypertarget{class_string_a3833f844a743166a7b9ad3d762aa3e5d}\label{class_string_a3833f844a743166a7b9ad3d762aa3e5d} 
+\index{String@{String}!operator==@{operator==}}
+\index{operator==@{operator==}!String@{String}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool String\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if the strings are the same. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_string_a48d8e048362a8f6c749b11a693f06ed5}\label{class_string_a48d8e048362a8f6c749b11a693f06ed5} 
+\index{String@{String}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!String@{String}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily char \& String\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Returns a reference to the character at a specific index in the string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char\& 
+\end{DoxyReturn}
+\Hypertarget{class_string_a7f8ab9a8205265cd692fcdc128925625}\label{class_string_a7f8ab9a8205265cd692fcdc128925625} 
+\index{String@{String}!replace@{replace}}
+\index{replace@{replace}!String@{String}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}}
+{\footnotesize\ttfamily void String\+::replace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{search\+\_\+value,  }\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{replace\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+If the current string includes the search value, it is replaced with the replace value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+\_\+value} & \\
+\hline
+{\em replace\+\_\+value} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_string_a7cf805781fa0cfbf7d74a568965bbd9e}\label{class_string_a7cf805781fa0cfbf7d74a568965bbd9e} 
+\index{String@{String}!size@{size}}
+\index{size@{size}!String@{String}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily const size\+\_\+t String\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of characters in the string. 
+
+\begin{DoxyReturn}{Returns}
+const size\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_string_a019ab4d3559769b2423d5bdb6e31837e}\label{class_string_a019ab4d3559769b2423d5bdb6e31837e} 
+\index{String@{String}!split@{split}}
+\index{split@{split}!String@{String}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily void String\+::split (\begin{DoxyParamCaption}\item[{const char}]{split\+\_\+character,  }\item[{\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_string}{String}} $>$ \&}]{returned }\end{DoxyParamCaption}) const}
+
+
+
+Splits the string into different tokens and pushes them into the \"{}returned\"{} \doxylink{class_vector}{Vector}. EXAMPLE\+: \"{}\+An Interesting sentence\"{}. If the split character is \textquotesingle{} \textquotesingle{}, then the \doxylink{class_vector}{Vector} will have the following elements\+: 0.\+An 1.\+Interesting 3.\+sentence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em split\+\_\+character} & \\
+\hline
+{\em returned} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_string_acd0f5a95a832c1ff8fc798b19e511b08}\label{class_string_acd0f5a95a832c1ff8fc798b19e511b08} 
+\index{String@{String}!substr@{substr}}
+\index{substr@{substr}!String@{String}}
+\doxysubsubsection{\texorpdfstring{substr()}{substr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_string}{String}} String\+::substr (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{pos,  }\item[{const size\+\_\+t}]{len }\end{DoxyParamCaption}) const}
+
+
+
+Returns a newly constructed string object with its value initialized to a copy of a substring of this object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & \\
+\hline
+{\em len} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_string}{String} 
+\end{DoxyReturn}
+\Hypertarget{class_string_aad17febaccbcdeb63ed98b093d5c7aa0}\label{class_string_aad17febaccbcdeb63ed98b093d5c7aa0} 
+\index{String@{String}!to\_lower\_case@{to\_lower\_case}}
+\index{to\_lower\_case@{to\_lower\_case}!String@{String}}
+\doxysubsubsection{\texorpdfstring{to\_lower\_case()}{to\_lower\_case()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_string}{String}} String\+::to\+\_\+lower\+\_\+case (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a new string in which each letter is made lowercase. Does not modify the original string. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_string}{String} 
+\end{DoxyReturn}
+\Hypertarget{class_string_ab10a6fa236d5abd4ca2884d2d287a7e6}\label{class_string_ab10a6fa236d5abd4ca2884d2d287a7e6} 
+\index{String@{String}!to\_upper\_case@{to\_upper\_case}}
+\index{to\_upper\_case@{to\_upper\_case}!String@{String}}
+\doxysubsubsection{\texorpdfstring{to\_upper\_case()}{to\_upper\_case()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_string}{String}} String\+::to\+\_\+upper\+\_\+case (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a new string in which each letter is made uppercase. Does not modify the original string. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_string}{String} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Libraries/String.\+hpp\item 
+Libraries/String.\+cpp\end{DoxyCompactItemize}

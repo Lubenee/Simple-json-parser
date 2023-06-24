@@ -1,0 +1,33 @@
+\doxysection{Json\+Int.\+hpp}
+\hypertarget{_json_int_8hpp_source}{}\label{_json_int_8hpp_source}\index{Headers/JsonChildren/JsonInt.hpp@{Headers/JsonChildren/JsonInt.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#if\ !defined(JSON\_INT\_H)}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ JSON\_INT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Json.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_json_int}{JsonInt}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_json}{Json}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_json_int_aa14e0277f6b06413761dd2ce38f8691b}{JsonInt}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_json_int_aa14e0277f6b06413761dd2ce38f8691b}{JsonInt}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \_val);}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_json_int_aa14e0277f6b06413761dd2ce38f8691b}{JsonInt}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_json_int}{JsonInt}}\ \&rhs);}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_json_int}{JsonInt}}\ \&operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_json_int}{JsonInt}}\ \&rhs);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_json}{Json}}\ *\mbox{\hyperlink{class_json_int_ae5e419fd134794b9949bb420b7bb8149}{clone}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_json_int_a653da00e3095c4d1a37eb37e448f82f3}{log}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_string}{String}}\ \mbox{\hyperlink{class_json_int_a78ce9a0a5c5c8add79fe7612dbfa141c}{get\_as\_str}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ contains\_recursive(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_value,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_curr\_key,\ \mbox{\hyperlink{class_vector}{Vector<String>}}\ \&keys)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_json_int}{\string~JsonInt}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ val;}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ JSON\_INT\_H}}
+
+\end{DoxyCode}

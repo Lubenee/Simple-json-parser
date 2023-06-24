@@ -1,0 +1,33 @@
+\doxysection{Json\+Float.\+hpp}
+\hypertarget{_json_float_8hpp_source}{}\label{_json_float_8hpp_source}\index{Headers/JsonChildren/JsonFloat.hpp@{Headers/JsonChildren/JsonFloat.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#if\ !defined(JSON\_FLOAT\_H)}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ JSON\_FLOAT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Json.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_json_float}{JsonFloat}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_json}{Json}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_json_float_a2574fba699dff1584b0affded3acca03}{JsonFloat}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_json_float_a2574fba699dff1584b0affded3acca03}{JsonFloat}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \_val);}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_json_float_a2574fba699dff1584b0affded3acca03}{JsonFloat}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_json_float}{JsonFloat}}\ \&rhs);}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_json_float}{JsonFloat}}\ \&operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_json_float}{JsonFloat}}\ \&rhs);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_json}{Json}}\ *\mbox{\hyperlink{class_json_float_ae0994063d8f4a74180e27e8c082a56a3}{clone}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_json_float_a43b36921dc2426d133fa7016b41197a8}{log}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_string}{String}}\ \mbox{\hyperlink{class_json_float_a1d7f2ba74bb49b211d7366108ceacd86}{get\_as\_str}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ contains\_recursive(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_value,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_curr\_key,\ \mbox{\hyperlink{class_vector}{Vector<String>}}\ \&keys)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_json_float}{\string~JsonFloat}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{float}\ val;}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ JSON\_FLOAT\_H}}
+
+\end{DoxyCode}

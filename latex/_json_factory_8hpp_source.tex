@@ -1,0 +1,51 @@
+\doxysection{Json\+Factory.\+hpp}
+\hypertarget{_json_factory_8hpp_source}{}\label{_json_factory_8hpp_source}\index{Headers/JsonFactory.hpp@{Headers/JsonFactory.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ JSON\_FACTORY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ JSON\_FACTORY\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}JsonCreator.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_json}{Json}};}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_json_factory}{JsonFactory}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_json_factory}{JsonFactory}}\ \&\mbox{\hyperlink{class_json_factory_a171d351c2b1a9557eb31159fd6022d06}{get}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_json}{Json}}\ *\mbox{\hyperlink{class_json_factory_a090c2cb9c7e2c7bd44e261c2785b3393}{parse\_value}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_json}{Json}}\ *\mbox{\hyperlink{class_json_factory_ac8ca77b084101625f80efd7dccfb019b}{parse\_file}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\_filename)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_json_factory_a13e1351274ad9ab2d5bad2f80ee347d6}{register\_valid\_json}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_json_creator}{JsonCreator}}\ *rhs);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_json_creator}{JsonCreator}}\ *\mbox{\hyperlink{class_json_factory_a007c363cb1043dcc8002e7e11cd08bad}{get\_creator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_val)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_json_factory_a2f3051c95c66baecd7a6a993fe93d182}{JsonFactory}}(\mbox{\hyperlink{class_json_factory}{JsonFactory}}\ \textcolor{keyword}{const}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_json_factory_a1376c90ec042501bef7b129c390f056d}{operator=}}(\mbox{\hyperlink{class_json_factory}{JsonFactory}}\ \textcolor{keyword}{const}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_json}{Json}}\ *\mbox{\hyperlink{class_json_factory_a090c2cb9c7e2c7bd44e261c2785b3393}{parse\_value}}(std::ifstream\ \&ifs)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ \ \ \ EXPECTED\ VALID\ CREATORS:}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ \ \ \ \ \ \ \ NULL}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ \ \ \ \ \ \ \ BOOL}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ \ \ \ \ \ \ \ INT}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ \ \ \ \ \ \ \ FLOAT}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ \ \ \ \ \ \ \ STRING}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ \ \ \ \ \ \ \ LIST}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ \ \ \ \ \ \ \ OBJECT}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_json_creator}{JsonCreator}}\ *creators[8];}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ count;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_json_factory}{JsonFactory}}()\ \{\}}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_json_factory}{\string~JsonFactory}}()\ \{\}}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

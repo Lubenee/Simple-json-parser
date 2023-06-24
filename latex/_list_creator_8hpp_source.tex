@@ -1,0 +1,28 @@
+\doxysection{List\+Creator.\+hpp}
+\hypertarget{_list_creator_8hpp_source}{}\label{_list_creator_8hpp_source}\index{Headers/JsonCreators/ListCreator.hpp@{Headers/JsonCreators/ListCreator.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#if\ !defined(LIST\_CREATOR\_H)}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LIST\_CREATOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}JsonCreator.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}JsonList.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_list_creator}{ListCreator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_json_creator}{JsonCreator}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_list_creator_a957dcf55141172a2cb62f941a960e027}{ListCreator}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_json}{Json}}\ *\mbox{\hyperlink{class_list_creator_a6d9ac58675ccbbe5777cef1a4e78b22d}{create\_json}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&val)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_list_creator_a184a7d2430cc05dd2ffff2c03cbbfe0f}{get\_val}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_obj)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_list_creator}{\string~ListCreator}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_string}{String}}\ remove\_square\_braces(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&val)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_json}{Json}}\ *parse\_list(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&val)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LIST\_CREATOR\_H}}
+
+\end{DoxyCode}

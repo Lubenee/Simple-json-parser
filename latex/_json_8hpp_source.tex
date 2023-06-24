@@ -1,0 +1,53 @@
+\doxysection{Json.\+hpp}
+\hypertarget{_json_8hpp_source}{}\label{_json_8hpp_source}\index{Headers/Json.hpp@{Headers/Json.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ JSON\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ JSON\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}String.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Vector.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ Quote\ "{}\(\backslash\)"{}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_json}{Json}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_json_af8081b99e6b1fb1bfb7f030c86af9dfb}{Json}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_json_a3a78c4c91c6c9db9d546176612da2064}{Json}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_json}{Json}}\ \&rhs)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_json_a57354610e6e2c1ceef1e4bb3859b8296}{log}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_string}{String}}\ \mbox{\hyperlink{class_json_a7f00bb53850b78552a39608112f0a8b7}{get\_as\_str}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_json}{Json}}\ *\mbox{\hyperlink{class_json_a3c294744e4e13e900db410b6994b4513}{clone}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_json_a4466d1d4f6de13898a9abf1639ddbc37}{log\_search\_results}}()\textcolor{keyword}{\ const\ }\{\}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ log\_contains\_results()\textcolor{keyword}{\ const\ }\{\}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_json_abecbf16ac83bcaf269b57d35d925932f}{search}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_vector}{Vector<String>}}\ \mbox{\hyperlink{class_json_aa233bb447a8a1f90e887125a51187ee2}{contains}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_json_ad09574ca866335dc65e916ed641aabac}{create}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_path,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&new\_value,\ \textcolor{keywordtype}{int}\ depth\ =\ 0)\ \{\}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_json_af0da770d6e6911e003d0492e837d37c9}{set}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_path,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&new\_value,\ \textcolor{keywordtype}{int}\ depth\ =\ 0)\ \{\}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_json_a11a4a284faae1e89fbc0f82b4c681df2}{erase}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&path,\ \textcolor{keywordtype}{int}\ depth\ =\ 0)\ \{\}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_json_ae5da37004e4e96ac117d6a9f845b9797}{move}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_from,\ \mbox{\hyperlink{class_string}{String}}\ \&\_to,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ depth\ =\ 0)\ \{\}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_json}{\string~Json}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_json_ada03220fb7cdf6c765413b3c50d3cccb}{log\_space}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ contains\_recursive(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_value,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_curr\_key,\ \mbox{\hyperlink{class_vector}{Vector<String>}}\ \&keys)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ format\_spaces;}
+\DoxyCodeLine{00138\ \};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

@@ -1,0 +1,26 @@
+\doxysection{String\+Creator.\+hpp}
+\hypertarget{_string_creator_8hpp_source}{}\label{_string_creator_8hpp_source}\index{Headers/JsonCreators/StringCreator.hpp@{Headers/JsonCreators/StringCreator.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#if\ !defined(STRING\_CREATOR\_H)}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STRING\_CREATOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}JsonCreator.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}JsonString.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_string_creator}{StringCreator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_json_creator}{JsonCreator}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_string_creator_a53a99ef3599548abf08389230eb3b12d}{StringCreator}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_json}{Json}}\ *\mbox{\hyperlink{class_string_creator_ac1f83945ac501ac4336a940a6140234a}{create\_json}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&val)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_string_creator_a46509c546c6a5e179abb02f96096157b}{get\_val}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_obj)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_string_creator}{\string~StringCreator}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_str(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&val)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_string}{String}}\ remove\_quotes(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&val)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

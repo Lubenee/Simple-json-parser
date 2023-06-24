@@ -1,0 +1,96 @@
+\doxysection{Json\+Creator Class Reference}
+\hypertarget{class_json_creator}{}\label{class_json_creator}\index{JsonCreator@{JsonCreator}}
+Inheritance diagram for Json\+Creator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.600000cm]{class_json_creator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_json_creator_ab696b6a3f4392deb45aaa2f34e799a0e}{Json\+Creator}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+val)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_json}{Json} Creator object. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_json_creator_a9641ff88cbd5debb81d9dc6a1eca0d0d}{get\+\_\+val}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+obj) const =0
+\begin{DoxyCompactList}\small\item\em Get the val object. The child creators attempt to recognize what command is in the \+\_\+obj string. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_json}{Json}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_json_creator_a6570e62ba090a3fa2bb2be9f79b6ffad}{create\+\_\+json}} (const \mbox{\hyperlink{class_string}{String}} \&val) const =0
+\begin{DoxyCompactList}\small\item\em Attempt to create a new json object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_json_creator_a720c2b7fd16abee4d65247839cf3fe5a}\label{class_json_creator_a720c2b7fd16abee4d65247839cf3fe5a} 
+\mbox{\hyperlink{class_string}{String}} {\bfseries val}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_json_creator_ab696b6a3f4392deb45aaa2f34e799a0e}\label{class_json_creator_ab696b6a3f4392deb45aaa2f34e799a0e} 
+\index{JsonCreator@{JsonCreator}!JsonCreator@{JsonCreator}}
+\index{JsonCreator@{JsonCreator}!JsonCreator@{JsonCreator}}
+\doxysubsubsection{\texorpdfstring{JsonCreator()}{JsonCreator()}}
+{\footnotesize\ttfamily Json\+Creator\+::\+Json\+Creator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{\+\_\+val }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_json}{Json} Creator object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+val} & The creator\textquotesingle{}s \"{}identifier\"{}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_json_creator_a6570e62ba090a3fa2bb2be9f79b6ffad}\label{class_json_creator_a6570e62ba090a3fa2bb2be9f79b6ffad} 
+\index{JsonCreator@{JsonCreator}!create\_json@{create\_json}}
+\index{create\_json@{create\_json}!JsonCreator@{JsonCreator}}
+\doxysubsubsection{\texorpdfstring{create\_json()}{create\_json()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_json}{Json}} \texorpdfstring{$\ast$}{*} Json\+Creator\+::create\+\_\+json (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attempt to create a new json object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The value that\textquotesingle{}s to be parsed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Json\texorpdfstring{$\ast$}{*} The Value returned as a \doxylink{class_json}{Json} pointer. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_bool_creator_ae9a2a6a3b6c8e2ba0042ee1268f345ff}{Bool\+Creator}}, \mbox{\hyperlink{class_float_creator_a84423ecacf824c6eae41d0d7fb5d3b2e}{Float\+Creator}}, \mbox{\hyperlink{class_int_creator_a35932335943ce4406467264aea0b2221}{Int\+Creator}}, \mbox{\hyperlink{class_list_creator_a6d9ac58675ccbbe5777cef1a4e78b22d}{List\+Creator}}, \mbox{\hyperlink{class_null_creator_ad93efe26592c30a1cec7e3f458e7c35d}{Null\+Creator}}, \mbox{\hyperlink{class_object_creator_a61fb9b6b716cf7e9304b34fd01437d45}{Object\+Creator}}, and \mbox{\hyperlink{class_string_creator_ac1f83945ac501ac4336a940a6140234a}{String\+Creator}}.
+
+\Hypertarget{class_json_creator_a9641ff88cbd5debb81d9dc6a1eca0d0d}\label{class_json_creator_a9641ff88cbd5debb81d9dc6a1eca0d0d} 
+\index{JsonCreator@{JsonCreator}!get\_val@{get\_val}}
+\index{get\_val@{get\_val}!JsonCreator@{JsonCreator}}
+\doxysubsubsection{\texorpdfstring{get\_val()}{get\_val()}}
+{\footnotesize\ttfamily virtual bool Json\+Creator\+::get\+\_\+val (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the val object. The child creators attempt to recognize what command is in the \+\_\+obj string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+obj} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true They recognized a command. 
+
+false They did not recognize a command. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_bool_creator_afe3d7041cd6f7cbca395d3c66dfb4833}{Bool\+Creator}}, \mbox{\hyperlink{class_float_creator_a2bc45714fc1ea4ebdbf659061b4efad0}{Float\+Creator}}, \mbox{\hyperlink{class_int_creator_aee5850caa166b02a9c4cddd39ee32c93}{Int\+Creator}}, \mbox{\hyperlink{class_list_creator_a184a7d2430cc05dd2ffff2c03cbbfe0f}{List\+Creator}}, \mbox{\hyperlink{class_null_creator_a893fe63f98f39de70c99d90d5b81f95d}{Null\+Creator}}, \mbox{\hyperlink{class_object_creator_a2705f8199ca8636dce8b4ba4df4540df}{Object\+Creator}}, and \mbox{\hyperlink{class_string_creator_a46509c546c6a5e179abb02f96096157b}{String\+Creator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Headers/\+Json\+Creators/Json\+Creator.\+hpp\item 
+src/\+Json\+Creators/Json\+Creator.\+cpp\end{DoxyCompactItemize}

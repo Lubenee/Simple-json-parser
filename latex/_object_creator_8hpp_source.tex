@@ -1,0 +1,27 @@
+\doxysection{Object\+Creator.\+hpp}
+\hypertarget{_object_creator_8hpp_source}{}\label{_object_creator_8hpp_source}\index{Headers/JsonCreators/ObjectCreator.hpp@{Headers/JsonCreators/ObjectCreator.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#if\ !defined(OBJECT\_CREATOR\_H)}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ OBJECT\_CREATOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}JsonCreator.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}JsonObject.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_object_creator}{ObjectCreator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_json_creator}{JsonCreator}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_object_creator_aad03bf617d2d170ecbf8e09aedbf2db0}{ObjectCreator}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_json}{Json}}\ *\mbox{\hyperlink{class_object_creator_a61fb9b6b716cf7e9304b34fd01437d45}{create\_json}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&val)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_object_creator_a2705f8199ca8636dce8b4ba4df4540df}{get\_val}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_obj)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_object_creator}{\string~ObjectCreator}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_string}{String}}\ remove\_curly\_braces(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&val)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_string}{String}}\ parse\_obj\_key(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&value,\ \textcolor{keywordtype}{size\_t}\ \&index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_json}{Json}}\ *parse\_object(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OBJECT\_CREATOR\_H}}
+
+\end{DoxyCode}

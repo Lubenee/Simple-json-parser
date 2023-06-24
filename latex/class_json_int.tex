@@ -1,0 +1,143 @@
+\doxysection{Json\+Int Class Reference}
+\hypertarget{class_json_int}{}\label{class_json_int}\index{JsonInt@{JsonInt}}
+
+
+Publicly inherits the \doxylink{class_json}{Json} class. Holds integer values.  
+
+
+
+
+{\ttfamily \#include $<$Json\+Int.\+hpp$>$}
+
+Inheritance diagram for Json\+Int\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_json_int}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_json_int_aa14e0277f6b06413761dd2ce38f8691b}\label{class_json_int_aa14e0277f6b06413761dd2ce38f8691b} 
+{\bfseries Json\+Int} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_json_int_a45ce92dab4baa5e2e6f453b936d0e914}\label{class_json_int_a45ce92dab4baa5e2e6f453b936d0e914} 
+{\bfseries Json\+Int} (const int \+\_\+val)
+\begin{DoxyCompactList}\small\item\em Sets the element\textquotesingle{}s int value to the passed value. \end{DoxyCompactList}\item 
+\Hypertarget{class_json_int_a75b06ac4933f240beb1bc08beaf2028e}\label{class_json_int_a75b06ac4933f240beb1bc08beaf2028e} 
+{\bfseries Json\+Int} (const \mbox{\hyperlink{class_json_int}{Json\+Int}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Default copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_json_int_a0c51dc434dd9196eca812cc0cee38879}\label{class_json_int_a0c51dc434dd9196eca812cc0cee38879} 
+\mbox{\hyperlink{class_json_int}{Json\+Int}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_json_int}{Json\+Int}} \&rhs)
+\item 
+\mbox{\hyperlink{class_json}{Json}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_json_int_ae5e419fd134794b9949bb420b7bb8149}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clone method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_json_int_a653da00e3095c4d1a37eb37e448f82f3}{log}} () const override
+\begin{DoxyCompactList}\small\item\em Logs the current int value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_string}{String}} \mbox{\hyperlink{class_json_int_a78ce9a0a5c5c8add79fe7612dbfa141c}{get\+\_\+as\+\_\+str}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the current int value as a string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_json_int_acae5e28aee21c70a18ac4af355621b5d}{contains\+\_\+recursive}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+value, const \mbox{\hyperlink{class_string}{String}} \&\+\_\+curr\+\_\+key, \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_string}{String}} $>$ \&keys) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_json}{Json}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Json} ()=default
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_json}{Json} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_json_a3a78c4c91c6c9db9d546176612da2064}{Json}} (const \mbox{\hyperlink{class_json}{Json}} \&rhs)=default
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_json}{Json} object Default copy constructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_json_a57354610e6e2c1ceef1e4bb3859b8296}{log}} () const =0
+\begin{DoxyCompactList}\small\item\em Parses the current json element into a string and logs it. Pure virtual method. Each child must redefine for it\textquotesingle{}s own type. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_string}{String}} \mbox{\hyperlink{class_json_a7f00bb53850b78552a39608112f0a8b7}{get\+\_\+as\+\_\+str}} () const =0
+\begin{DoxyCompactList}\small\item\em Returns a new string containing the element\textquotesingle{}s value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_json}{Json}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_json_a3c294744e4e13e900db410b6994b4513}{clone}} () const =0
+\begin{DoxyCompactList}\small\item\em Clone method. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_json_a4466d1d4f6de13898a9abf1639ddbc37}{log\+\_\+search\+\_\+results}} () const
+\begin{DoxyCompactList}\small\item\em This method logs all the elements that were found after using the search method. If nothing is found, it does nothing. \end{DoxyCompactList}\item 
+virtual void {\bfseries log\+\_\+contains\+\_\+results} () const
+\item 
+virtual const bool \mbox{\hyperlink{class_json_abecbf16ac83bcaf269b57d35d925932f}{search}} (const \mbox{\hyperlink{class_string}{String}} \&key) const
+\begin{DoxyCompactList}\small\item\em Allows the user to search for an element, whose key corresponds to the passed value. Only the List and Object children are required to predefine this method, since only they hold element keys. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_string}{String}} $>$ \mbox{\hyperlink{class_json_aa233bb447a8a1f90e887125a51187ee2}{contains}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+value) const
+\begin{DoxyCompactList}\small\item\em Checks if the JSON structure contains a specific value and retrieves the keys leading to that value. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_json_ad09574ca866335dc65e916ed641aabac}{create}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+path, const \mbox{\hyperlink{class_string}{String}} \&new\+\_\+value, int depth=0)
+\begin{DoxyCompactList}\small\item\em Creates a new \doxylink{class_json}{Json} element on the specified path, with the specified value. If the path is invalid, the JSON state remains unchanged. The depth parameter is not to be used. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_json_af0da770d6e6911e003d0492e837d37c9}{set}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+path, const \mbox{\hyperlink{class_string}{String}} \&new\+\_\+value, int depth=0)
+\begin{DoxyCompactList}\small\item\em Replaces an existing element\textquotesingle{}s value with the new value passed. If the path is invalid, the JSON state remains unchanged. The depth parameter is not to be used. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_json_a11a4a284faae1e89fbc0f82b4c681df2}{erase}} (const \mbox{\hyperlink{class_string}{String}} \&path, int depth=0)
+\begin{DoxyCompactList}\small\item\em Erases the last key that is given in the path variable. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_json_ae5da37004e4e96ac117d6a9f845b9797}{move}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+from, \mbox{\hyperlink{class_string}{String}} \&\+\_\+to, int depth=0)
+\begin{DoxyCompactList}\small\item\em Moves the element from the first path to the second one. The element at the first path is deleted. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_json_ada03220fb7cdf6c765413b3c50d3cccb}{log\+\_\+space}} () const
+\begin{DoxyCompactList}\small\item\em Used for formatting elements when logging them or saving them to files. This method is to be redifined by all children who leave a new line when they are done \textquotesingle{}logging\textquotesingle{} themselves. \end{DoxyCompactList}\item 
+virtual bool {\bfseries contains\+\_\+recursive} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+value, const \mbox{\hyperlink{class_string}{String}} \&\+\_\+curr\+\_\+key, \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_string}{String}} $>$ \&keys) const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_json}{Json}}}
+\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+t {\bfseries format\+\_\+spaces} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Publicly inherits the \doxylink{class_json}{Json} class. Holds integer values. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_json_int_ae5e419fd134794b9949bb420b7bb8149}\label{class_json_int_ae5e419fd134794b9949bb420b7bb8149} 
+\index{JsonInt@{JsonInt}!clone@{clone}}
+\index{clone@{clone}!JsonInt@{JsonInt}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_json}{Json}} \texorpdfstring{$\ast$}{*} Json\+Int\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone method. 
+
+
+
+Implements \mbox{\hyperlink{class_json_a3c294744e4e13e900db410b6994b4513}{Json}}.
+
+\Hypertarget{class_json_int_acae5e28aee21c70a18ac4af355621b5d}\label{class_json_int_acae5e28aee21c70a18ac4af355621b5d} 
+\index{JsonInt@{JsonInt}!contains\_recursive@{contains\_recursive}}
+\index{contains\_recursive@{contains\_recursive}!JsonInt@{JsonInt}}
+\doxysubsubsection{\texorpdfstring{contains\_recursive()}{contains\_recursive()}}
+{\footnotesize\ttfamily bool Json\+Int\+::contains\+\_\+recursive (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{\+\_\+value,  }\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{\+\_\+curr\+\_\+key,  }\item[{\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_string}{String}} $>$ \&}]{keys }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_json}{Json}}.
+
+\Hypertarget{class_json_int_a78ce9a0a5c5c8add79fe7612dbfa141c}\label{class_json_int_a78ce9a0a5c5c8add79fe7612dbfa141c} 
+\index{JsonInt@{JsonInt}!get\_as\_str@{get\_as\_str}}
+\index{get\_as\_str@{get\_as\_str}!JsonInt@{JsonInt}}
+\doxysubsubsection{\texorpdfstring{get\_as\_str()}{get\_as\_str()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_string}{String}} Json\+Int\+::get\+\_\+as\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the current int value as a string. 
+
+
+
+Implements \mbox{\hyperlink{class_json_a7f00bb53850b78552a39608112f0a8b7}{Json}}.
+
+\Hypertarget{class_json_int_a653da00e3095c4d1a37eb37e448f82f3}\label{class_json_int_a653da00e3095c4d1a37eb37e448f82f3} 
+\index{JsonInt@{JsonInt}!log@{log}}
+\index{log@{log}!JsonInt@{JsonInt}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily void Json\+Int\+::log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Logs the current int value. 
+
+
+
+Implements \mbox{\hyperlink{class_json_a57354610e6e2c1ceef1e4bb3859b8296}{Json}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Headers/\+Json\+Children/Json\+Int.\+hpp\item 
+src/\+Json\+Children/Json\+Int.\+cpp\end{DoxyCompactItemize}

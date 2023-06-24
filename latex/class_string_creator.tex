@@ -1,0 +1,83 @@
+\doxysection{String\+Creator Class Reference}
+\hypertarget{class_string_creator}{}\label{class_string_creator}\index{StringCreator@{StringCreator}}
+Inheritance diagram for String\+Creator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_string_creator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_string_creator_a53a99ef3599548abf08389230eb3b12d}\label{class_string_creator_a53a99ef3599548abf08389230eb3b12d} 
+{\bfseries String\+Creator} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_string}{String} Creator object. This constructor initializes the \doxylink{class_json_creator}{Json\+Creator}\textquotesingle{}s constructor with \"{}\+String\"{} name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_json}{Json}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_string_creator_ac1f83945ac501ac4336a940a6140234a}{create\+\_\+json}} (const \mbox{\hyperlink{class_string}{String}} \&val) const override
+\begin{DoxyCompactList}\small\item\em Create a json object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_string_creator_a46509c546c6a5e179abb02f96096157b}{get\+\_\+val}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+obj) const override
+\begin{DoxyCompactList}\small\item\em Get the val object Returns true if \+\_\+obj is a string surrounded with quotes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_json_creator}{Json\+Creator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_json_creator_ab696b6a3f4392deb45aaa2f34e799a0e}{Json\+Creator}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+val)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_json}{Json} Creator object. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_json_creator_a9641ff88cbd5debb81d9dc6a1eca0d0d}{get\+\_\+val}} (const \mbox{\hyperlink{class_string}{String}} \&\+\_\+obj) const =0
+\begin{DoxyCompactList}\small\item\em Get the val object. The child creators attempt to recognize what command is in the \+\_\+obj string. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_json}{Json}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_json_creator_a6570e62ba090a3fa2bb2be9f79b6ffad}{create\+\_\+json}} (const \mbox{\hyperlink{class_string}{String}} \&val) const =0
+\begin{DoxyCompactList}\small\item\em Attempt to create a new json object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_json_creator}{Json\+Creator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_string}{String}} {\bfseries val}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_string_creator_ac1f83945ac501ac4336a940a6140234a}\label{class_string_creator_ac1f83945ac501ac4336a940a6140234a} 
+\index{StringCreator@{StringCreator}!create\_json@{create\_json}}
+\index{create\_json@{create\_json}!StringCreator@{StringCreator}}
+\doxysubsubsection{\texorpdfstring{create\_json()}{create\_json()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_json}{Json}} \texorpdfstring{$\ast$}{*} String\+Creator\+::create\+\_\+json (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Create a json object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Json\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_json_creator_a6570e62ba090a3fa2bb2be9f79b6ffad}{Json\+Creator}}.
+
+\Hypertarget{class_string_creator_a46509c546c6a5e179abb02f96096157b}\label{class_string_creator_a46509c546c6a5e179abb02f96096157b} 
+\index{StringCreator@{StringCreator}!get\_val@{get\_val}}
+\index{get\_val@{get\_val}!StringCreator@{StringCreator}}
+\doxysubsubsection{\texorpdfstring{get\_val()}{get\_val()}}
+{\footnotesize\ttfamily bool String\+Creator\+::get\+\_\+val (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_string}{String}} \&}]{\+\_\+obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the val object Returns true if \+\_\+obj is a string surrounded with quotes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+obj} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_json_creator_a9641ff88cbd5debb81d9dc6a1eca0d0d}{Json\+Creator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Headers/\+Json\+Creators/String\+Creator.\+hpp\item 
+src/\+Json\+Creators/String\+Creator.\+cpp\end{DoxyCompactItemize}

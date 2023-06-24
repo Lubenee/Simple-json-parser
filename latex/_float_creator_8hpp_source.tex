@@ -1,0 +1,28 @@
+\doxysection{Float\+Creator.\+hpp}
+\hypertarget{_float_creator_8hpp_source}{}\label{_float_creator_8hpp_source}\index{Headers/JsonCreators/FloatCreator.hpp@{Headers/JsonCreators/FloatCreator.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#if\ !defined(FLOAT\_CREATOR\_H)}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FLOAT\_CREATOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}JsonCreator.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}JsonFloat.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_float_creator}{FloatCreator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_json_creator}{JsonCreator}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_float_creator_ac500eda63b49ba4a40c9b71e8a9be73d}{FloatCreator}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_json}{Json}}\ *\mbox{\hyperlink{class_float_creator_a84423ecacf824c6eae41d0d7fb5d3b2e}{create\_json}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&val)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_float_creator_a2bc45714fc1ea4ebdbf659061b4efad0}{get\_val}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&\_obj)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_float_creator}{\string~FloatCreator}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_float(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&val)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{float}\ stof(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_string}{String}}\ \&val)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

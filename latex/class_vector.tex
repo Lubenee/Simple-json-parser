@@ -1,0 +1,393 @@
+\doxysection{Vector\texorpdfstring{$<$}{<} Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_vector}{}\label{class_vector}\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_vector_1_1_iterator}{Iterator}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_vector_1_1_iterator}{Iterator} for the \doxylink{class_vector}{Vector} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_vector_ad65912893a2e7ca590e39384540c2f43}\label{class_vector_ad65912893a2e7ca590e39384540c2f43} 
+{\bfseries Vector} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_vector}{Vector} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector_aea42fb9899a8f86b96b000b4ad863d16}{Vector}} (std\+::initializer\+\_\+list$<$ Type $>$ lst)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_vector}{Vector} object with an initializer list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector_afbb72fea13cfa171ff28d40df43711ec}{Vector}} (const int \+\_\+size)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_vector}{Vector} object and reserve a given ammount of space. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector_a0561b2a0661c55d388f2ca73d9aa5e8f}{Vector}} (const \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_vector}{Vector} object Copy constructor. It requires that the objects have a defined operator=. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vector_aacec8379fd4e11d0487c365b530447e7}{push\+\_\+back}} (const Type \&new\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Pushes a new item to the back of the array. \end{DoxyCompactList}\item 
+\Hypertarget{class_vector_a7b69499662bf8677d7ed4ec7c580f571}\label{class_vector_a7b69499662bf8677d7ed4ec7c580f571} 
+void {\bfseries pop\+\_\+back} ()
+\begin{DoxyCompactList}\small\item\em Removes the last element from the array. It\textquotesingle{}s the user\textquotesingle{}s responsibility to free any memory, if the object requires it. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector_1_1_iterator}{Iterator}} \mbox{\hyperlink{class_vector_adadf73b37b504266f090943526825571}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Returns an iterator to the start of the vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector_1_1_iterator}{Iterator}} \mbox{\hyperlink{class_vector_aa7fcb7e17a79f018013f5910cbcddd94}{end}} ()
+\begin{DoxyCompactList}\small\item\em Returns an iterator to the end of the vector. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_vector_1_1_iterator}{Iterator}} \mbox{\hyperlink{class_vector_acdfd23b9758889cb885582dfe2485945}{cbegin}} () const
+\begin{DoxyCompactList}\small\item\em Returns a const iterator to the start of the vector. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_vector_1_1_iterator}{Iterator}} \mbox{\hyperlink{class_vector_ab0f5c25bab399d53d45533fcc4b58305}{cend}} () const
+\begin{DoxyCompactList}\small\item\em Returns a const iterator to the end of the vector. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_vector_a10f1e234500da5f6a4e9170c5d959080}{size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the vector\textquotesingle{}s size. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_vector_a94b2896b25b8c133ecb88b517feff04f}{capacity}} () const
+\begin{DoxyCompactList}\small\item\em Returns the vector\textquotesingle{}s capacity. \end{DoxyCompactList}\item 
+\Hypertarget{class_vector_a323a883ca38db45a0d8ccf2e38b2f197}\label{class_vector_a323a883ca38db45a0d8ccf2e38b2f197} 
+bool {\bfseries empty} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the vector is empty. \end{DoxyCompactList}\item 
+Type \& \mbox{\hyperlink{class_vector_a13993a7f5bda9aceb0bb3802c616e2d2}{back}} () const
+\begin{DoxyCompactList}\small\item\em Returns a reference to the vector\textquotesingle{}s last element. \end{DoxyCompactList}\item 
+Type \& \mbox{\hyperlink{class_vector_af1e9755be26fbbc8293814932e35eaeb}{front}} () const
+\begin{DoxyCompactList}\small\item\em Returns a reference to the vector\textquotesingle{}s first element. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vector_a20e6eee5487182ef9d966731f817b95d}{contains}} (const Type \&elem) const
+\begin{DoxyCompactList}\small\item\em Returns true if the vector contains the passed element. \end{DoxyCompactList}\item 
+Type \& \mbox{\hyperlink{class_vector_ac08a35e73fa5529217f9f4f099cdfaa0}{at}} (const Type \&elem) const
+\begin{DoxyCompactList}\small\item\em Returns a reference to the passed element, if one is in the vector. This method requires that the objects have a valid operator==. If such an element isn\textquotesingle{}t found, the method throws invalid\+\_\+argument. \end{DoxyCompactList}\item 
+\Hypertarget{class_vector_a6d56e9122731b5bd4f60204bb23b0495}\label{class_vector_a6d56e9122731b5bd4f60204bb23b0495} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Clears all elements. If any memory is allocated by the user, it\textquotesingle{}s also the user\textquotesingle{}s responsibility to free it manually. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vector_a65349f68ea78ca3c9c1a456678c97216}{reserve}} (const size\+\_\+t new\+\_\+capacity)
+\begin{DoxyCompactList}\small\item\em Reserves memory to accommodate a specified capacity for the \doxylink{class_vector}{Vector}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vector_a48ad4a9545ae4d4b59d99b23c4458bb9}{erase}} (const size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Removes the element at {\itshape index}. The method does not handle errors if the index is out of range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vector_ad46c08e85f59cd73cb9dd26c47dc0f9d}{erase}} (const Type \&elem)
+\begin{DoxyCompactList}\small\item\em Removes the passed element, if one is in the data array. Else throws invalid\+\_\+argument. \end{DoxyCompactList}\item 
+Type \& \mbox{\hyperlink{class_vector_a20b9ed6848e51e99af7066d2ca69e6e4}{operator\mbox{[}$\,$\mbox{]}}} (const size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the element at {\itshape index}. The method does not handle errors if the index is out of range. \end{DoxyCompactList}\item 
+const Type \& \mbox{\hyperlink{class_vector_acb37f73f19d43c66e80e09756026169b}{operator\mbox{[}$\,$\mbox{]}}} (const size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Returns a const reference to the element at {\itshape index}. The method does not handle errors if the index is out of range. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$ \& \mbox{\hyperlink{class_vector_a00c0934c668f58c5e0111cd2f419b2e2}{operator=}} (const \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Assigns the contents of another \doxylink{class_vector}{Vector} to this \doxylink{class_vector}{Vector}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_vector_aea42fb9899a8f86b96b000b4ad863d16}\label{class_vector_aea42fb9899a8f86b96b000b4ad863d16} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\mbox{\hyperlink{class_vector}{\+::\+Vector}} (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ Type $>$}]{lst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_vector}{Vector} object with an initializer list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_vector_afbb72fea13cfa171ff28d40df43711ec}\label{class_vector_afbb72fea13cfa171ff28d40df43711ec} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\mbox{\hyperlink{class_vector}{\+::\+Vector}} (\begin{DoxyParamCaption}\item[{const int}]{\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct a new \doxylink{class_vector}{Vector} object and reserve a given ammount of space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+size} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_vector_a0561b2a0661c55d388f2ca73d9aa5e8f}\label{class_vector_a0561b2a0661c55d388f2ca73d9aa5e8f} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\mbox{\hyperlink{class_vector}{\+::\+Vector}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_vector}{Vector} object Copy constructor. It requires that the objects have a defined operator=. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_vector_ac08a35e73fa5529217f9f4f099cdfaa0}\label{class_vector_ac08a35e73fa5529217f9f4f099cdfaa0} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!at@{at}}
+\index{at@{at}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+Type \& \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::at (\begin{DoxyParamCaption}\item[{const Type \&}]{elem }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a reference to the passed element, if one is in the vector. This method requires that the objects have a valid operator==. If such an element isn\textquotesingle{}t found, the method throws invalid\+\_\+argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Type\& 
+\end{DoxyReturn}
+\Hypertarget{class_vector_a13993a7f5bda9aceb0bb3802c616e2d2}\label{class_vector_a13993a7f5bda9aceb0bb3802c616e2d2} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!back@{back}}
+\index{back@{back}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+Type \& \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::back\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a reference to the vector\textquotesingle{}s last element. 
+
+\begin{DoxyReturn}{Returns}
+Type\& 
+\end{DoxyReturn}
+\Hypertarget{class_vector_adadf73b37b504266f090943526825571}\label{class_vector_adadf73b37b504266f090943526825571} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!begin@{begin}}
+\index{begin@{begin}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::\+Iterator \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::begin}
+
+
+
+Returns an iterator to the start of the vector. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_vector_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
+\Hypertarget{class_vector_a94b2896b25b8c133ecb88b517feff04f}\label{class_vector_a94b2896b25b8c133ecb88b517feff04f} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+size\+\_\+t \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::capacity\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the vector\textquotesingle{}s capacity. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_vector_acdfd23b9758889cb885582dfe2485945}\label{class_vector_acdfd23b9758889cb885582dfe2485945} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{cbegin()}{cbegin()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+const \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::\+Iterator \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::cbegin}
+
+
+
+Returns a const iterator to the start of the vector. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_vector_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
+\Hypertarget{class_vector_ab0f5c25bab399d53d45533fcc4b58305}\label{class_vector_ab0f5c25bab399d53d45533fcc4b58305} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!cend@{cend}}
+\index{cend@{cend}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{cend()}{cend()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+const \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::\+Iterator \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::cend}
+
+
+
+Returns a const iterator to the end of the vector. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_vector_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
+\Hypertarget{class_vector_a20e6eee5487182ef9d966731f817b95d}\label{class_vector_a20e6eee5487182ef9d966731f817b95d} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!contains@{contains}}
+\index{contains@{contains}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+bool \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::contains (\begin{DoxyParamCaption}\item[{const Type \&}]{elem }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if the vector contains the passed element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_vector_aa7fcb7e17a79f018013f5910cbcddd94}\label{class_vector_aa7fcb7e17a79f018013f5910cbcddd94} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!end@{end}}
+\index{end@{end}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::\+Iterator \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::end}
+
+
+
+Returns an iterator to the end of the vector. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_vector_1_1_iterator}{Iterator} 
+\end{DoxyReturn}
+\Hypertarget{class_vector_a48ad4a9545ae4d4b59d99b23c4458bb9}\label{class_vector_a48ad4a9545ae4d4b59d99b23c4458bb9} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!erase@{erase}}
+\index{erase@{erase}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+void \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::erase (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes the element at {\itshape index}. The method does not handle errors if the index is out of range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_vector_ad46c08e85f59cd73cb9dd26c47dc0f9d}\label{class_vector_ad46c08e85f59cd73cb9dd26c47dc0f9d} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!erase@{erase}}
+\index{erase@{erase}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+void \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::erase (\begin{DoxyParamCaption}\item[{const Type \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes the passed element, if one is in the data array. Else throws invalid\+\_\+argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_vector_af1e9755be26fbbc8293814932e35eaeb}\label{class_vector_af1e9755be26fbbc8293814932e35eaeb} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!front@{front}}
+\index{front@{front}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+Type \& \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::front\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a reference to the vector\textquotesingle{}s first element. 
+
+\begin{DoxyReturn}{Returns}
+Type\& 
+\end{DoxyReturn}
+\Hypertarget{class_vector_a00c0934c668f58c5e0111cd2f419b2e2}\label{class_vector_a00c0934c668f58c5e0111cd2f419b2e2} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$ \& \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assigns the contents of another \doxylink{class_vector}{Vector} to this \doxylink{class_vector}{Vector}. 
+
+This operator assigns the elements of the specified \doxylink{class_vector}{Vector} to the current \doxylink{class_vector}{Vector}, replacing its current contents. The size and capacity of this \doxylink{class_vector}{Vector} may change to match the size of the assigned \doxylink{class_vector}{Vector}. The assignment operator performs a deep copy of the elements, so each element is individually copied to the destination \doxylink{class_vector}{Vector}. This requires that the elements in have a defined operator=.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{class_vector}{Vector} whose elements are to be assigned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the modified \doxylink{class_vector}{Vector} after the assignment.
+\end{DoxyReturn}
+NOTE\+: The assignment operator ensures that the current \doxylink{class_vector}{Vector} is self-\/assignment safe. That is, assigning a \doxylink{class_vector}{Vector} to itself has no effect and does not result in undefined behavior. \Hypertarget{class_vector_a20b9ed6848e51e99af7066d2ca69e6e4}\label{class_vector_a20b9ed6848e51e99af7066d2ca69e6e4} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+Type \& \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a reference to the element at {\itshape index}. The method does not handle errors if the index is out of range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Type\& 
+\end{DoxyReturn}
+\Hypertarget{class_vector_acb37f73f19d43c66e80e09756026169b}\label{class_vector_acb37f73f19d43c66e80e09756026169b} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+const Type \& \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Returns a const reference to the element at {\itshape index}. The method does not handle errors if the index is out of range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Type\& 
+\end{DoxyReturn}
+\Hypertarget{class_vector_aacec8379fd4e11d0487c365b530447e7}\label{class_vector_aacec8379fd4e11d0487c365b530447e7} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+void \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{const Type \&}]{new\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pushes a new item to the back of the array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+data} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_vector_a65349f68ea78ca3c9c1a456678c97216}\label{class_vector_a65349f68ea78ca3c9c1a456678c97216} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!reserve@{reserve}}
+\index{reserve@{reserve}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+void \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::reserve (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{new\+\_\+capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reserves memory to accommodate a specified capacity for the \doxylink{class_vector}{Vector}. 
+
+This method ensures that the \doxylink{class_vector}{Vector} has enough memory allocated to hold at least the specified number of elements. If the requested capacity is less than or equal to the current capacity, this method has no effect. Otherwise, it allocates additional memory to accommodate the requested capacity, potentially increasing the \doxylink{class_vector}{Vector}\textquotesingle{}s capacity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+capacity} & The desired capacity for the \doxylink{class_vector}{Vector}.\\
+\hline
+\end{DoxyParams}
+NOTE\+: This method does not modify the \doxylink{class_vector}{Vector}\textquotesingle{}s size or change the actual number of elements stored in it. To add elements to the \doxylink{class_vector}{Vector}, use the {\ttfamily push\+\_\+back} method after reserving sufficient capacity. \Hypertarget{class_vector_a10f1e234500da5f6a4e9170c5d959080}\label{class_vector_a10f1e234500da5f6a4e9170c5d959080} 
+\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}!size@{size}}
+\index{size@{size}!Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+size\+\_\+t \mbox{\hyperlink{class_vector}{Vector}}$<$ Type $>$\+::size\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the vector\textquotesingle{}s size. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Libraries/Vector.\+hpp\end{DoxyCompactItemize}
